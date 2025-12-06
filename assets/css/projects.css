@@ -1,0 +1,280 @@
+/* 🌿 Advanced Projects Page Styles */
+
+/* Header Background Animation (Compact Version) */
+.animated-bg {
+  background: linear-gradient(270deg, #1e3c72, #2a5298, #6dd5ed, #2193b0);
+  background-size: 800% 800%;
+  animation: gradientAnimation 15s ease infinite;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px 10px;  /* 🔹 Reduced height */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  border-bottom: 2px solid #ffffff30;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+}
+
+.animated-bg h1 {
+  font-size: 1.8rem;   /* Smaller heading */
+  margin-bottom: 5px;
+}
+
+.animated-bg .tagline {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Projects Container */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 20px 10%;
+}
+
+/* Project Card */
+.project-card {
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.project-card .content {
+  padding: 15px 20px;
+}
+
+.project-card h3 {
+  color: #d84315;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+  color: #1a73e8;
+}
+
+.project-card p {
+  color: #555;
+  margin: 4px 0;
+}
+
+/* Upcoming Projects */
+.upcoming-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.upcoming-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.5s;
+  cursor: pointer;
+}
+
+.upcoming-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  color: #fff;
+}
+
+.upcoming-card h3, .upcoming-card p{
+  transition: color 0.3s ease;
+}
+
+/* Before & After Slider */
+/* Main section title top-left */
+.before-after-section-row .section-title {
+  text-align: left;
+  margin-left: 5%;
+  font-size: 24px;
+  color: #1a73e8;
+  margin-bottom: 15px;
+}
+
+/* Row layout for 3 blocks */
+.slider-row {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Responsive */
+  margin: 0 5%;
+}
+
+.before-after-slider-block {
+  flex: 1 1 30%;  /* 3 blocks in a row */
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-heading {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #1a73e8;
+}
+
+/* Slider images and fade effect - your existing styles */
+.before-after-slider {
+  position: relative;
+  width: 100%;
+  height: 250px; /* adjust as needed */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.before-after-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.before-after-slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.before-after-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid #1a73e8;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.8s ease;
+}
+
+.before-after-slide img.after {
+  opacity: 0;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .slider-row {
+    flex-direction: column;
+  }
+  .before-after-slider-block {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Tracker Cards */
+.tracker {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 10%;
+}
+
+.tracker-card {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  border-radius: 15px;
+  padding: 15px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tracker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.tracker-card h4 {
+  margin-bottom: 10px;
+  color: #4caf50;
+}
+
+.tracker-card .progress-bar {
+  background: #ddd;
+  border-radius: 10px;
+  height: 12px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.tracker-card .progress-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #4caf50, #81c784);
+  animation: progressAnimation 2s forwards;
+}
+
+@keyframes progressAnimation {
+  0% { width: 0; }
+  100% { width: var(--progress, 50%); }
+}
+
+/* Chart Container */
+.chart-container {
+  max-width: 900px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .projects-container, .tracker{
+    grid-template-columns: 1fr;
+    margin: 20px 5%;
+  }
+  
+  .before-after-slide{
+    min-width:90%;
+    height:200px;
+  }
+
+  .chart-container{
+    width:95%;
+    padding:15px;
+  }
+}
+
+
+

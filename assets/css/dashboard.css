@@ -1,0 +1,159 @@
+body {
+  font-family: "Noto Sans Devanagari", sans-serif;
+  margin: 0;
+  background: #f4f9f6;
+  color: #222;
+}
+
+header {
+  background: linear-gradient(90deg, #FF9933, #FFFFFF, #138808);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  flex: 1;
+  text-align: center;
+}
+.menu-btn {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+nav.main-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav.main-nav a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+nav.main-nav a.active {
+  border-bottom: 2px solid black;
+}
+@media(max-width:900px){
+  .menu-btn { display: block; }
+  nav.main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+  nav.main-nav.show { display: flex; }
+  nav.main-nav a { width: 100%; text-align: left; }
+}
+
+.selector {
+  margin: 15px auto;
+  text-align: center;
+}
+.selector select {
+  padding: 6px 10px;
+  border-radius: 5px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.dashboard-section {
+  margin: 20px auto;
+  max-width: 1200px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1 1 280px;      /* flexible width */
+  max-width: 380px;
+  width: 100%;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Canvas responsive */
+.circle-card canvas,
+.bar-card canvas,
+.line-card canvas {
+  width: 100% !important;
+  height: 200px !important;  /* chart height */
+}
+
+.chart-section {
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+.chart-container {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.chart-container h3 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+}
+
+.top-achievements {
+  width: 90%;
+  max-width: 800px;
+  margin: 30px auto;
+}
+.top-achievements h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+.top-achievements ul { list-style: none; padding: 0; }
+.top-achievements li {
+  background: #f7fff9;
+  margin: 5px 0;
+  padding: 10px 12px;
+  border-left: 6px solid #007b3a;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.top-achievements li:hover { background: #e0f7e6; }
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #e6f2ea;
+  color: #555;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}

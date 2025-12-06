@@ -1,0 +1,421 @@
+/* -------------------------------------
+   BASIC RESET
+------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+body {
+  background: #f5f7f8;
+  color: #222;
+}
+
+/* -------------------------------------
+   HEADER BASE
+------------------------------------- */
+header {
+  background: linear-gradient(90deg, #1b4332, #2d6a4f);
+  padding: 12px 25px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* -------------------------------------
+   LOGO + TITLES
+------------------------------------- */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-title img {
+  width: 60px;
+  filter: drop-shadow(0 0 5px #ffffff80);
+}
+
+.titles h2 {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.titles h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* -------------------------------------
+   MOBILE MENU BUTTON
+------------------------------------- */
+.menu-btn {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menu-btn:hover {
+  background: #40916c;
+}
+
+/* -------------------------------------
+   NAVBAR DESKTOP
+------------------------------------- */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.main-nav a,
+.dropdown button {
+  background: #40916c;
+  border: none;
+  color: #fff;
+  padding: 9px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.35s ease;
+  box-shadow: 0 2px 5px #00000040;
+  text-decoration: none !important;
+}
+
+/* HOVER */
+.main-nav a:hover,
+.dropdown button:hover {
+  background: #52b788;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px #52b788aa;
+}
+
+/* ACTIVE LINK FIX */
+.main-nav a.active {
+  background: #52b788 !important;
+  border: 2px solid #95d5b2 !important;
+  color: #fff !important;
+  box-shadow: 0 0 10px #74c69daa !important;
+}
+
+/* -------------------------------------
+   DASHBOARD BUTTON SPECIAL
+------------------------------------- */
+.dashboard {
+  background: #ffca3a !important;
+  color: #000 !important;
+  font-weight: 700;
+}
+
+.dashboard:hover {
+  background: #ffb703 !important;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px #ffb703aa;
+}
+
+/* -------------------------------------
+   DROPDOWN MENU
+------------------------------------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background: #2d6a4f;
+  min-width: 190px;
+  border-radius: 8px;
+  padding: 6px;
+  top: 44px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  /* तुमची मागणी → dropdown ला border */
+  border: 2px solid #52b788;
+  border-left: 4px solid #74c69d;
+}
+
+.dropdown-content a {
+  padding: 10px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s ease;
+
+  /* प्रत्येक link ला bottom border */
+  border-bottom: 1px solid #74c69d55;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+/* HOVER */
+.dropdown-content a:hover {
+  background: #1b4332;
+  color: #fff;
+  border-left: 4px solid #ffca3a;
+  padding-left: 18px;
+}
+
+/* SHOW DROPDOWN */
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: auto;
+}
+
+/* -------------------------------------
+   HERO SECTION
+------------------------------------- */
+.hero {
+  text-align: center;
+  padding: 70px 20px;
+  background: url('assets/images/bg.jpg') center/cover fixed;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero h1 {
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+/* -------------------------------------
+   MOBILE RESPONSIVE
+------------------------------------- */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #2d6a4f;
+    padding: 15px 0;
+    margin-top: 12px;
+    border-radius: 10px;
+  }
+
+  .main-nav.show {
+    display: flex;
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0px); }
+  }
+
+  .dropdown-content {
+    position: relative;
+    background: #1b4332;
+    top: 0;
+    box-shadow: none;
+    opacity: 1;
+    transform: translateY(0);
+    padding-left: 20px;
+  }
+
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+  }
+}
+
+/* -------------------------------------
+   HEADER BASE (INDIAN FLAG THEME)
+------------------------------------- */
+header {
+  background: linear-gradient(90deg, #FF9933, #FFFFFF, #138808);
+  padding: 12px 25px;
+  color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* LOGO SHADOW */
+.logo-title img {
+  width: 60px;
+  filter: drop-shadow(0 0 8px #00000040);
+}
+
+/* NAV BUTTONS */
+.main-nav a,
+.dropdown button {
+  background: #138808;
+  border: none;
+  color: white;
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
+/* Hover Saffron glow */
+.main-nav a:hover,
+.dropdown button:hover {
+  background: #FF9933;
+  color: #000;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px #FF993380;
+}
+
+/* Active Menu Highlight */
+.main-nav a.active {
+  background: #FFFFFF;
+  color: #000;
+  border: 2px solid #FF9933;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* DROPDOWN MENU */
+.dropdown-content {
+  background: white;
+  border: 2px solid #138808;
+  border-left: 4px solid #FF9933;
+  min-width: 190px;
+  border-radius: 8px;
+  padding: 6px;
+  transition: 0.35s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+  padding: 10px;
+  color: #000;
+  display: block;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+/* Hover (Green background + Saffron border) */
+.dropdown-content a:hover {
+  background: #138808;
+  color: #fff;
+  border-left: 4px solid #FF9933;
+  padding-left: 18px;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+
+  .main-nav {
+    background: linear-gradient(180deg, #FF9933, #FFFFFF, #138808);
+    border-radius: 12px;
+    padding: 15px 0;
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .dropdown-content {
+    background: #fff;
+    border: 2px solid #138808;
+    border-left: 4px solid #FF9933;
+    padding-left: 15px;
+  }
+
+}
+
+/* 🔹 ताज्या बातम्या marquee */
+    .news-section {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      margin: 10px 0;
+    }
+
+    .news-section h2 {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+      color: #ff0059;
+      animation: blinkZoom 1.8s infinite ease-in-out;
+    }
+
+    @keyframes blinkZoom {
+      0%, 100% { opacity: 1; transform: scale(1); color: #ff0059; }
+      50% { opacity: 0.6; transform: scale(1.15); color: #0066ff; }
+    }
+
+
+  </style>
+
+
+<style>
+/* Body: Soft neutral gradient */
+/* Body: subtle Indian flag inspired gradient (soft cream → white → soft green) */
+/* Body: subtle Indian flag inspired gradient */
+/* Body: Dark grey background with light text */
+body {
+  margin: 0;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  background: #2c2c2c; /* Dark grey */
+  color: #f1f1f1; /* Light text for readability */
+}
+
+
+/* Header: Indian flag gradient */
+header {
+  background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  padding: 8px 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: #212121; /* Dark text on light parts */
+}
+
+
+ @media (max-width: 768px) {
+      nav { display: none !important; }
+      #mobileMenuToggle { display: flex !important; }
+      .logo-title img { height: 45px; }
+      .logo-title h1 { font-size: clamp(0.85rem, 3.8vw, 1.1rem); }
+    }
+
+/* Hamburger Close Button */
+.close-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  background: #40916c;
+  padding: 8px 16px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.close-btn:hover {
+  background: #2d6a4f;
+}
+
