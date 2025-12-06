@@ -565,19 +565,23 @@
 <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/panolens@0.12.0/build/panolens.min.js"></script>
 
-<script>
-  const pano = new PANOLENS.ImagePanorama('assets/images/panorama.PNG');
+
+
+
+  <script>
+  const pano = new PANOLENS.ImagePanorama('assets/images/panorama.png');
 
   const viewer = new PANOLENS.Viewer({
     container: document.getElementById('panorama'),
     autoRotate: true,
-    autoRotateSpeed: 0.4,
+    autoRotateSpeed: 1,
     controlBar: true,
-    cameraFov: 80,
+    horizontalView: true
   });
 
   viewer.add(pano);
 </script>
+
 
 
 <!-- External Script (Correct way) -->
@@ -593,4 +597,5 @@
 
 
 </html>
+
 
