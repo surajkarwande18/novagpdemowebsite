@@ -582,6 +582,20 @@
   viewer.add(pano);
 </script>
 
+<script>
+  const pano = new PANOLENS.ImagePanorama('assets/images/panorama.png');
+
+  const viewer = new PANOLENS.Viewer({
+    container: document.getElementById('panorama'),
+    autoRotate: true,
+    autoRotateSpeed: 0.5,
+    controlBar: true,
+    output: 'console',
+    cameraFov: 80,
+  });
+
+  viewer.add(pano);
+</script>
 
 
 
@@ -598,6 +612,7 @@
 
 
 </html>
+
 
 
 
