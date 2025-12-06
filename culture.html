@@ -329,10 +329,10 @@
       <h2>🖼️ गावाची विशेष दृश्ये</h2>
       <div class="swiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="assets/images/village1.jpg" alt="village 1"></div>
-          <div class="swiper-slide"><img src="assets/images/mandir1.jpg" alt="mandir"></div>
+          <div class="swiper-slide"><img src="assets/images/village1.JPG" alt="village 1"></div>
+          <div class="swiper-slide"><img src="assets/images/mandir1.JPG" alt="mandir"></div>
           <div class="swiper-slide"><img src="assets/images/village2.jpeg" alt="village 2"></div>
-          <div class="swiper-slide"><img src="assets/images/village-gate - Copy.jpg" alt="gate"></div>
+          <div class="swiper-slide"><img src="assets/images/village-gate.JPG" alt="gate"></div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -568,19 +568,20 @@
 
 
 
-  <script>
+<script>
   const pano = new PANOLENS.ImagePanorama('assets/images/panorama.png');
 
   const viewer = new PANOLENS.Viewer({
     container: document.getElementById('panorama'),
     autoRotate: true,
-    autoRotateSpeed: 1,
+    autoRotateSpeed: 0.5,
     controlBar: true,
-    horizontalView: true
+    output: 'console'
   });
 
   viewer.add(pano);
 </script>
+
 
 
 
@@ -597,5 +598,6 @@
 
 
 </html>
+
 
 
