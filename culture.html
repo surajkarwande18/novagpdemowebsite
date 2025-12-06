@@ -583,19 +583,20 @@
 </script>
 
 <script>
-  const pano = new PANOLENS.ImagePanorama('assets/images/panorama.png');
+  const panorama = new PANOLENS.ImagePanorama('assets/images/panorama.png');
 
   const viewer = new PANOLENS.Viewer({
     container: document.getElementById('panorama'),
     autoRotate: true,
-    autoRotateSpeed: 0.5,
+    autoRotateSpeed: 0.4,
     controlBar: true,
-    output: 'console',
-    cameraFov: 80,
+    cameraFov: 80
   });
 
-  viewer.add(pano);
+  viewer.add(panorama);
 </script>
+
+
 
 
 
@@ -612,6 +613,7 @@
 
 
 </html>
+
 
 
 
