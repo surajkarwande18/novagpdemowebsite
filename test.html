@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ग्रामपंचायत चोपडज | मुख्यपृष्ठ</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+  <link rel="stylesheet" href="assets/css/style1.css"> 
+    
+</head>
+
+<body>
+
+    <!-- 🔰 HEADER -->
+    <header>
+        <div class="header-container">
+
+            <!-- LOGO + TITLE -->
+            <div class="logo-title">
+                <img src="assets/images/logo_gp.png" alt="ग्रामपंचायत लोगो">
+                <div class="titles">
+                    <h2>भारत सरकार</h2>
+                    <h1>ग्रामपंचायत चोपडज</h1>
+                </div>
+            </div>
+
+            <!-- MOBILE MENU BUTTON -->
+            <div class="menu-btn" id="menu-btn">☰</div>
+
+            <!-- NAVBAR -->
+            <nav class="main-nav" id="main-nav">
+
+                <a href="index.html" class="active">🏠 मुख्यपृष्ठ</a>
+
+                <!-- पंचायत -->
+                <div class="dropdown">
+                    <button>🏛️ पंचायत</button>
+                    <div class="dropdown-content">
+                        <a href="about.html">ग्रामपंचायतीबद्दल</a>
+                        <a href="infrastructure.html">पायाभूत सुविधा</a>
+                        <a href="culture.html">संस्कृती व ओळख</a>
+                    </div>
+                </div>
+
+                <!-- योजना -->
+                <div class="dropdown">
+                    <button>📜 योजना</button>
+                    <div class="dropdown-content">
+                        <a href="schemes.html">योजना व लाभ</a>
+                        <a href="announcements.html">परिपत्रके</a>
+                        <a href="services.html">नागरिक सेवा</a>
+                    </div>
+                </div>
+
+                <!-- विकास -->
+                <div class="dropdown">
+                    <button>🚧 विकास</button>
+                    <div class="dropdown-content">
+                        <a href="projects.html">मुख्य प्रकल्प</a>
+                        <a href="environment.html">पर्यावरण</a>
+                        <a href="employment.html">रोजगार</a>
+                        <a href="education.html">शिक्षण</a>
+                    </div>
+                </div>
+
+                <!-- Direct Links (underline removed through CSS) -->
+                <a href="gallery.html">🖼️ गॅलरी</a>
+                <a href="grievance.html">📮 तक्रार</a>
+                <a href="contact.html">📞 संपर्क</a>
+                <a href="dashboard.html">📊 डॅशबोर्ड</a>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <section class="hero">
+        <h1>ग्रामपंचायत चोपडज</h1>
+        <p>आपल्या गावाचा अधिकृत डिजिटल पोर्टल</p>
+    </section>
+
+    <!-- External Script (Correct way) -->
+    <script src="assets/js/script1.js"></script>
+
+
+<!-- 📰 ताज्या बातम्या -->
+<div class="news-section" style="position:relative;">
+  <h2>⭐ ताज्या बातम्या ⭐</h2>
+
+  <!-- 🔹 Right corner compact weather widget -->
+  <div id="weatherWidget">
+    🌤️ लोड होत आहे...
+  </div>
+
+  <marquee behavior="scroll" direction="left" scrollamount="5"
+           onmouseover="this.stop();" onmouseout="this.start();"
+           style="background:#eef6ff; padding:10px; border-radius:8px; color:#003366; font-size:1rem; margin-top:8px;">
+    
+    <span style="margin-right:35px; cursor:pointer;" onclick="openPopup(1)">
+      <span class="blink-star">⭐</span> स्वच्छता मोहीम — गावात स्वच्छतेसाठी विशेष उपक्रम
+      <span class="new-badge">🆕 New</span>
+    </span>
+
+    <span style="margin-right:35px; cursor:pointer;" onclick="openPopup(2)">
+      <span class="blink-star">⭐</span> ऍनिमिया मुक्त गावं अभियान
+      <span class="new-badge">🆕 New</span>
+    </span>
+
+    <span style="margin-right:35px; cursor:pointer;" onclick="openPopup(3)">
+      <span class="blink-star">⭐</span> पाणी साठवण प्रकल्प — नवीन विहिरीचे उद्घाटन
+    </span>
+    <span style="margin-right:35px; cursor:pointer;" onclick="openPopup(4)">
+      <span class="blink-star">⭐</span> दुग्ध व्यवसाय प्रशिक्षण — शेतकऱ्यांना लाभ
+    </span>
+    <span style="margin-right:35px; cursor:pointer;" onclick="openPopup(5)">
+      <span class="blink-star">⭐</span> महिला बचतगट उपक्रम — आर्थिक स्वावलंबनाकडे वाटचाल
+      <span class="new-badge">📄 Notice</span>
+    </span>
+
+    <span onclick="openPopup(6)" style="margin-right:35px; cursor:pointer;">📢 ग्रामसभा बैठक सायं. ५ वाजता</span>
+    <span onclick="openPopup(7)" style="margin-right:35px; cursor:pointer;">💧 पाणीपुरवठा उद्या बंद राहील</span>
+    <span onclick="openPopup(8)" style="margin-right:35px; cursor:pointer;">💡 नवीन नळजोडणी योजना सुरू</span>
+    <span onclick="openPopup(9)" style="margin-right:35px; cursor:pointer;">🧹 स्वच्छता अभियान आठवडा चालू आहे</span>
+    <span onclick="openPopup(10)" style="margin-right:35px; cursor:pointer;">🌱 वृक्षारोपण कार्यक्रम रविवार दि. ९ नोव्हेंबर रोजी</span>
+  </marquee>
+</div>
+
+<!-- 🔹 Styles for compact weather widget -->
+<style>
+#weatherWidget {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: #e3f2fd;
+  color: #212121;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Responsive for mobile */
+@media(max-width:768px){
+  #weatherWidget{
+    top: 5px;
+    right: 5px;
+    font-size:0.75rem;
+    padding:4px 8px;
+  }
+}
+</style>
+
+<!-- 🔹 Compact Weather JS -->
+<script>
+const apiKey = "ae9f8a466794b22d01c062976c094418";
+const city = "Chikhali,IN";
+
+async function fetchWeatherCompact() {
+  try {
+    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=mr&appid=${apiKey}`);
+    const data = await res.json();
+
+    if(data.cod !== 200){
+      document.getElementById("weatherWidget").innerText = "🌤️ डेटा उपलब्ध नाही";
+      return;
+    }
+
+    const temp = data.main.temp.toFixed(1);
+    const desc = data.weather[0].description;
+
+    document.getElementById("weatherWidget").innerText = `🌤️ ${temp}°C, ${desc}`;
+  } catch(err){
+    document.getElementById("weatherWidget").innerText = "🌤️ Error!";
+    console.error(err);
+  }
+}
+
+// Initial fetch & refresh every 10 min
+fetchWeatherCompact();
+setInterval(fetchWeatherCompact, 10*60*1000);
+</script>
+
+
+
+<!-- 🔹 Popup -->
+<div id="popup" style="display:none; position:fixed; inset:0; background-color:rgba(0,0,0,0.6); z-index:9999;">
+  <div style="background:#fff; width:90%; max-width:650px; margin:5% auto; padding:20px; border-radius:12px; position:relative; box-shadow:0 0 15px rgba(0,0,0,0.3);">
+    <span onclick="closePopup()" style="position:absolute; top:8px; right:14px; font-size:24px; font-weight:bold; color:#444; cursor:pointer;">&times;</span>
+    <div id="popup-body" style="font-family:'Noto Sans Devanagari',sans-serif; color:#222; line-height:1.6;"></div>
+  </div>
+</div>
+
+<!-- 🔹 Styles -->
+<style>
+  @keyframes blinkStar {
+    0% { color: #ff0000; transform: scale(1); }
+    50% { color: #0055ff; transform: scale(1.15); }
+    100% { color: #ff0000; transform: scale(1); }
+  }
+  .blink-star {
+    animation: blinkStar 1s infinite;
+    margin-right: 6px;
+    font-size: 1.1rem;
+    display: inline-block;
+  }
+
+  @keyframes glowNew {
+    0% { color: #ff0000; text-shadow: 0 0 6px #ff3333, 0 0 10px #ff0000; }
+    50% { color: #0055ff; text-shadow: 0 0 6px #3399ff, 0 0 10px #0055ff; }
+    100% { color: #ff0000; text-shadow: 0 0 6px #ff3333, 0 0 10px #ff0000; }
+  }
+  .new-badge {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-left: 8px;
+    animation: glowNew 1.2s infinite;
+  }
+
+  @media (max-width: 600px) {
+    marquee { font-size: 0.9rem !important; }
+    #popup-body img { max-height: 160px !important; }
+  }
+</style>
+
+<!-- 🔹 Script -->
+<script>
+  const newsData = {
+    1: { title: 'स्वच्छता मोहीम — गावात स्वच्छतेसाठी विशेष उपक्रम', images: ['assets/images/news1.jpg'], info: 'गावात स्वच्छता मोहीम अंतर्गत कचरा संकलन, गटार स्वच्छता आणि जनजागृती कार्यक्रम राबविण्यात आला आहे.' },
+    2: { title: 'ऍनिमिया मुक्त गावं अभियान', images: ['assets/images/news2.jpeg'], info: 'गावात ऍनिमिया मुक्त गावं अभियान अंतर्गत आरोग्य तपासणी आणि जनजागृती उपक्रम राबविण्यात आले आहेत.' },
+    3: { title: 'पाणी साठवण प्रकल्प — नवीन विहिरीचे उद्घाटन', images: ['assets/images/news3.jpg'], info: 'नवीन विहिरीच्या उभारणीमुळे गावातील पाणीटंचाई कमी होईल आणि शेतीसाठी सिंचनास मदत मिळेल.' },
+    4: { title: 'दुग्ध व्यवसाय प्रशिक्षण — शेतकऱ्यांना लाभ', images: ['assets/images/news4.jpg'], info: 'शेतकऱ्यांसाठी दुग्धव्यवसाय प्रशिक्षण आयोजित करण्यात आले असून पूरक उत्पन्नाच्या संधी वाढतील.' },
+    5: { title: 'महिला बचतगट उपक्रम — आर्थिक स्वावलंबनाकडे वाटचाल', pdf: 'assets/pdfs/suchna.pdf', info: 'महिला बचतगट उपक्रमांद्वारे गावातील महिलांना स्वयंरोजगार प्रोत्साहन.' },
+    
+    // 🔹 नवीन बातम्या (6–10)
+    6: { title: 'ग्रामसभा बैठक', info: 'ग्रामसभा बैठक आज सायं. ५ वाजता ग्रामपंचायत सभागृहात होणार आहे. सर्व नागरिकांनी उपस्थित राहावे.' },
+    7: { title: 'पाणीपुरवठा बंद', info: 'देखभालीसाठी उद्या पूर्ण दिवस पाणीपुरवठा बंद राहील. नागरिकांनी पाण्याची साठवण करावी.' },
+    8: { title: 'नवीन नळजोडणी योजना', info: 'ग्रामपंचायतीत नवीन नळजोडणी योजना सुरू करण्यात आली आहे. अर्ज ग्रामसेवक कार्यालयात उपलब्ध आहेत.' },
+    9: { title: 'स्वच्छता अभियान आठवडा', info: 'गावात स्वच्छता अभियान आठवडा साजरा केला जात आहे. सर्व नागरिकांनी सहभागी व्हावे.' },
+    10: { title: 'वृक्षारोपण कार्यक्रम', info: 'रविवार दि. ९ नोव्हेंबर रोजी सकाळी ८ वाजता शाळा परिसरात वृक्षारोपण कार्यक्रम आयोजित केला आहे.' }
+  };
+
+  function openPopup(id) {
+    const popup = document.getElementById("popup");
+    const body = document.getElementById("popup-body");
+    const item = newsData[id];
+    if (!item) return;
+
+    let html = `<h3 style="color:#0055aa; text-align:center; margin-bottom:12px;">${item.title}</h3>`;
+    
+    if (item.pdf) {
+      html += `
+        <p>${item.info}</p>
+        <iframe src="${item.pdf}" style="width:100%; height:400px; border:none; border-radius:8px;"></iframe>
+        <a href="${item.pdf}" download style="display:inline-block;margin-top:10px;background:#0055ff;color:#fff;
+                  padding:8px 14px;border-radius:8px;text-decoration:none;">
+           ⬇️ Download Notice (PDF)
+        </a>`;
+    } else if (item.images) {
+      item.images.forEach(src => {
+        html += `<img src="${src}" style="width:100%; border-radius:8px; margin-bottom:10px;">`;
+      });
+      html += `<p>${item.info}</p>`;
+    } else {
+      html += `<p>${item.info}</p>`;
+    }
+
+    body.innerHTML = html;
+    popup.style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const popup = document.getElementById("popup");
+    if (event.target === popup) closePopup();
+  };
+</script>
+
+  <!-- 🏞️ Hero Banner -->
+  <section class="hero">
+    <img src="assets/images/grampanchayat-office.jpeg" alt="ग्रामपंचायत कार्यालय">
+    <div class="hero-content">
+      <h2>आपले स्वागत आहे!</h2>
+      <p>ग्रामपंचायत चोपडज – विकासाच्या वाटेवरील एक स्मार्ट गाव</p>
+      <a href="about.html" class="btn">अधिक जाणून घ्या</a>
+    </div>
+  </section>
+
+<!-- Panchayat Message Section -->
+<section class="panchayat-message" style="background:#fff3e0; padding:40px 10%; text-align:center; border-radius:12px; margin:20px 0;">
+  <h2 style="color:#fb8c00;">💡 आजचा सुविचार / पंचायत संदेश</h2>
+  <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();" style="font-size:1.1rem; color:#6d4c41; margin-top:15px;">
+    "संपूर्ण गाव स्वच्छ आणि सक्षम बनवणे हे आपल्या पंचायतचे मुख्य ध्येय आहे. प्रत्येक नागरिक सहभाग घेईल तेव्हाच आपला विकास शक्य होईल."
+  </marquee>
+</section>
+
+
+
+  <!-- 🏡 गाव एक दृष्टिक्षेपात -->
+  <section class="village-info">
+    <h2>🏡 गाव एक दृष्टिक्षेपात</h2>
+    <div class="info-cards">
+      <div class="card"><h3>लोकसंख्या</h3><p>३,५२०</p></div>
+      <div class="card"><h3>घरसंख्या</h3><p>७८०</p></div>
+      <div class="card"><h3>साक्षरता दर</h3><p>८७%</p></div>
+      <div class="card"><h3>प्रभाग</h3><p>५</p></div>
+      <div class="card"><h3>पाणी योजना</h3><p>२ प्रमुख स्रोत</p></div>
+      <div class="card"><h3>शेतकरी गट</h3><p>१५+</p></div>
+    </div>
+  </section>
+
+<!-- 📊 ग्रामविकास डॅशबोर्ड -->
+<section class="village-dashboard">
+  <h2>📊 ग्रामविकास डॅशबोर्ड</h2>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <canvas id="literacyChart"></canvas>
+      <p>साक्षरता दर</p>
+    </div>
+    <div class="chart-card">
+      <canvas id="waterChart"></canvas>
+      <p>पाणी योजना</p>
+    </div>
+    <div class="chart-card">
+      <canvas id="digitalChart"></canvas>
+      <p>डिजिटल सेवांचा वापर</p>
+    </div>
+  </div>
+</section>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  // Literacy Pie Chart
+  const literacyCtx = document.getElementById('literacyChart');
+  new Chart(literacyCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['साक्षर', 'असाक्षर'],
+      datasets: [{
+        data: [87, 13],
+        backgroundColor: ['#4caf50', '#c8e6c9'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins: { legend: { position: 'bottom' } }
+    }
+  });
+
+  // Water Supply Bar Chart
+  const waterCtx = document.getElementById('waterChart');
+  new Chart(waterCtx, {
+    type: 'bar',
+    data: {
+      labels: ['मुख्य योजना 1', 'मुख्य योजना 2', 'नवीन योजना'],
+      datasets: [{
+        label: 'पुरवठा कार्यक्षमता (%)',
+        data: [92, 85, 78],
+        backgroundColor: ['#ffb300', '#4caf50', '#03a9f4']
+      }]
+    },
+    options: {
+      scales: {
+        y: { beginAtZero: true, max: 100 }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+
+
+  // Digital Service Line Chart
+  const digitalCtx = document.getElementById('digitalChart');
+  new Chart(digitalCtx, {
+    type: 'line',
+    data: {
+      labels: ['2020', '2021', '2022', '2023', '2024'],
+      datasets: [{
+        label: 'वापर टक्केवारी',
+        data: [35, 50, 65, 80, 92],
+        fill: true,
+        borderColor: '#4caf50',
+        backgroundColor: 'rgba(76,175,80,0.2)',
+        tension: 0.3
+      }]
+    },
+    options: {
+      plugins: { legend: { position: 'bottom' } },
+      scales: {
+        y: { beginAtZero: true, max: 100 }
+      }
+    }
+  });
+</script>
+
+
+<!-- 💧 Water Storage & Trend Dashboard -->
+<section class="water-dashboard">
+  <h2>💧 पाणी साठा आणि पुरवठा ट्रेंड</h2>
+  <div class="charts-container">
+    <div class="chart-box">
+      <canvas id="storageGauge"></canvas>
+      <p>सध्याचा साठा स्तर</p>
+    </div>
+    <div class="chart-box">
+      <canvas id="monthlyTrend"></canvas>
+      <p>मासिक पाणी पुरवठा ट्रेंड</p>
+    </div>
+  </div>
+</section>
+
+<!-- Chart.js Library -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+/* 💧 Storage Level Gauge */
+const gaugeCtx = document.getElementById('storageGauge');
+new Chart(gaugeCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['साठा वापरला', 'उपलब्ध साठा'],
+    datasets: [{
+      data: [65, 35], // 65% वापरलेला, 35% शिल्लक
+      backgroundColor: ['#4caf50', '#e0e0e0'],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    cutout: '80%',
+    plugins: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: '💧 साठा स्तर: 65%',
+        font: { size: 16 }
+      }
+    }
+  }
+});
+
+/* 📆 Monthly Trend Chart */
+const trendCtx = document.getElementById('monthlyTrend');
+new Chart(trendCtx, {
+  type: 'line',
+  data: {
+    labels: ['जाने', 'फेब्रु', 'मार्च', 'एप्रिल', 'मे', 'जून', 'जुलै', 'ऑगस्ट', 'सप्टें', 'ऑक्टो'],
+    datasets: [{
+      label: 'पाणी वितरण (लिटर मध्ये)',
+      data: [22000, 25000, 27000, 26000, 30000, 32000, 34000, 31000, 29500, 28000],
+      borderColor: '#03a9f4',
+      backgroundColor: 'rgba(3,169,244,0.2)',
+      tension: 0.4,
+      fill: true,
+      pointRadius: 5,
+      pointHoverRadius: 8
+    }]
+  },
+  options: {
+    plugins: {
+      title: {
+        display: true,
+        text: '📊 मासिक पाणी पुरवठा ट्रेंड',
+        font: { size: 16 }
+      },
+      legend: {
+        display: false
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: 'लिटर'
+        }
+      }
+    }
+  }
+});
+</script>
+
+<!-- Progress Meter / Infographic Section -->
+<section class="progress-meter" style="background:#e8f5e9; padding:50px 10%; border-radius:12px; margin:20px 0; text-align:center;">
+  <h2 style="color:#43a047;">📊 प्रगती मीटर</h2>
+  <div class="progress-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; margin-top:30px;">
+
+    <!-- Swachhata Percentage -->
+    <div class="progress-card" style="background:#fff; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      <h3 style="color:#43a047;">स्वच्छता टक्केवारी</h3>
+      <canvas id="swachhProgress" width="150" height="150"></canvas>
+    </div>
+
+    <!-- Nal Jodani Coverage -->
+    <div class="progress-card" style="background:#fff; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      <h3 style="color:#43a047;">नळजोडणी कव्हरेज</h3>
+      <canvas id="waterProgress" width="150" height="150"></canvas>
+    </div>
+
+    <!-- Samruddha Panchayat Progress -->
+    <div class="progress-card" style="background:#fff; border-radius:12px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      <h3 style="color:#43a047;">सँमृद्ध पंचायत योजना प्रगती</h3>
+      <canvas id="panchayatProgress" width="150" height="150"></canvas>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Animated Progress Circles using Chart.js
+  const swachhProgress = new Chart(document.getElementById('swachhProgress'), {
+    type: 'doughnut',
+    data: { labels: ['स्वच्छ', 'बाकी'], datasets: [{ data: [85,15], backgroundColor:['#4caf50','#c8e6c9'], hoverOffset:4 }]},
+    options: { responsive:true, cutout:'70%', plugins:{legend:{display:false}, tooltip:{enabled:true}}}
+  });
+
+  const waterProgress = new Chart(document.getElementById('waterProgress'), {
+    type: 'doughnut',
+    data: { labels: ['कव्हरेज', 'बाकी'], datasets: [{ data: [72,28], backgroundColor:['#2196f3','#bbdefb'], hoverOffset:4 }]},
+    options: { responsive:true, cutout:'70%', plugins:{legend:{display:false}, tooltip:{enabled:true}}}
+  });
+
+  const panchayatProgress = new Chart(document.getElementById('panchayatProgress'), {
+    type: 'doughnut',
+    data: { labels: ['प्रगती', 'बाकी'], datasets: [{ data: [65,35], backgroundColor:['#ff9800','#ffe0b2'], hoverOffset:4 }]},
+    options: { responsive:true, cutout:'70%', plugins:{legend:{display:false}, tooltip:{enabled:true}}}
+  });
+</script>
+
+
+
+  <!-- 📹 ग्रामविकास व्हिडिओ -->
+  <section class="video-section">
+    <h2>🎥 ग्रामविकास व्हिडिओ</h2>
+    <video controls>
+      <source src="assets/videos/gp_video2.mp4" type="video/mp4">
+      तुमचा ब्राउझर व्हिडिओ प्ले करू शकत नाही.
+    </video>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 ग्रामपंचायत चोपडज | Developed by <strong>NovaTech Data Solutions LLP</strong>
+  </footer>
+
+</body>
+</html>

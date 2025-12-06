@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>माझे गाव, माझी प्रगती™ | Dashboard</title>
+<link rel="stylesheet" href="assets/css/dashboard.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+
+<header>
+<h1>📊 माझे गाव, माझी प्रगती™</h1>
+<div class="menu-btn" id="menu-btn">☰</div>
+<nav class="main-nav" id="main-nav">
+<a href="index.html">🏠 मुख्यपृष्ठ</a>
+<div class="dropdown"><button>🏛️ पंचायत</button>
+<div class="dropdown-content"><a href="about.html">ग्रामपंचायतीबद्दल</a><a href="infrastructure.html">पायाभूत सुविधा</a><a href="culture.html">संस्कृती व ओळख</a></div></div>
+<div class="dropdown"><button>📜 योजना</button>
+<div class="dropdown-content"><a href="schemes.html">योजना व लाभ</a><a href="announcements.html">परिपत्रके</a><a href="services.html">नागरिक सेवा</a></div></div>
+<div class="dropdown"><button>🚧 विकास</button>
+<div class="dropdown-content"><a href="projects.html">मुख्य प्रकल्प</a><a href="environment.html">पर्यावरण</a><a href="employment.html">रोजगार</a><a href="education.html">शिक्षण</a></div></div>
+<a href="gallery.html">🖼️ गॅलरी</a><a href="grievance.html">📮 तक्रार</a><a href="contact.html">📞 संपर्क</a>
+
+  <!-- डॅशबोर्ड + अर्थसंकल्प -->
+    <div class="dropdown">
+        <button>📊 डॅशबोर्ड</button>
+        <div class="dropdown-content">
+            <a href="dashboard.html">मुख्य डॅशबोर्ड</a>
+            <a href="finance.html">अर्थसंकल्प आणि पारदर्शकता</a>
+        </div>
+    </div>
+</nav>
+</header>
+
+<div class="selector">
+<label>वर्ष: </label>
+<select id="yearSelect">
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+</select>
+<label>महिना: </label>
+<select id="monthSelect">
+<option value="all">संपूर्ण वर्ष</option>
+<option value="Jan">जानेवारी</option><option value="Feb">फेब्रुवारी</option>
+<option value="Mar">मार्च</option><option value="Apr">एप्रिल</option>
+<option value="May">मे</option><option value="Jun">जून</option>
+<option value="Jul">जुलै</option><option value="Aug">ऑगस्ट</option>
+<option value="Sep">सप्टेंबर</option><option value="Oct">ऑक्टोबर</option>
+<option value="Nov">नोव्हेंबर</option><option value="Dec">डिसेंबर</option>
+</select>
+</div>
+
+<section class="dashboard-section">
+  <div class="row">
+    <div class="card circle-card">
+      <h3>👥 लोकसंख्या</h3>
+      <canvas id="popCircle"></canvas>
+      <p id="popText"></p>
+    </div>
+    <div class="card circle-card">
+      <h3>📚 साक्षरता</h3>
+      <canvas id="literacyCircle"></canvas>
+      <p id="literacyText"></p>
+    </div>
+    <div class="card bar-card">
+      <h3>🚰 स्वच्छता कव्हरेज</h3>
+      <canvas id="waterBar"></canvas>
+      <p id="waterText"></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card circle-card">
+      <h3>💧 नळजोडणी</h3>
+      <canvas id="waterSupplyCircle"></canvas>
+      <p id="waterSupplyText"></p>
+    </div>
+    <div class="card circle-card">
+      <h3>⚡ वीजपुरवठा</h3>
+      <canvas id="electricityCircle"></canvas>
+      <p id="electricityText"></p>
+    </div>
+    <div class="card line-card">
+      <h3>⏱️ वर्षातील प्रगती</h3>
+      <canvas id="progressChart"></canvas>
+    </div>
+  </div>
+</section>
+
+<section class="chart-section">
+  <div class="chart-container">
+    <h3>📈 वॉर्डनिहाय तुलनात्मक ग्राफ</h3>
+    <canvas id="wardChart"></canvas>
+  </div>
+</section>
+
+<section class="top-achievements">
+  <h3>🏆 वर्षातील टॉप ५ उपलब्धी</h3>
+  <ul id="achievementsList"></ul>
+</section>
+
+<footer>
+© 2025 ग्रामपंचायत चोपडज | Developed by NovaTech Data Solutions LLP
+</footer>
+
+<script src="assets/js/dashboard.js"></script>
+
+<!-- External Script (Correct way) -->
+    <script src="assets/js/script1.js"></script>
+</body>
+</html>

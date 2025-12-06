@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>शिक्षण आणि युवक कोपरा | ग्रामपंचायत</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+<style>
+body{
+  font-family:"Noto Sans Devanagari",sans-serif;
+  background:#f8fff9;
+  margin:0;
+  padding:0;
+}
+
+/* TOP NAV */
+.topnav{
+  background:#007b3a;
+  padding:15px;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:20px;
+  position:sticky;
+  top:0;
+  z-index:999;
+}
+.topnav a{
+  color:white;
+  text-decoration:none;
+  margin-right:20px;
+  font-size:18px;
+}
+.section{
+  width:90%;
+  margin:30px auto;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+.section h2{
+  margin-bottom:10px;
+  color:#008542;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+th,td{
+  border:1px solid #cde6d1;
+  padding:10px;
+  text-align:center;
+}
+
+/* PDF Button */
+.pdf-btn{
+  background:#0066cc;
+  padding:10px 20px;
+  border:none;
+  border-radius:8px;
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+  margin:10px 5px;
+}
+.pdf-btn:hover{ background:#004c99; }
+
+/* GALLERY */
+.gallery-grid,.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+.gallery-grid img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.gallery-grid img:hover{
+  transform:scale(1.05);
+}
+.video-grid iframe{
+  width:100%;
+  height:200px;
+  border-radius:12px;
+  border:none;
+}
+
+
+.section {
+    padding: 40px;
+    background: #f8fafc;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.section h2 {
+    text-align: center;
+    color: #006629;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    text-align: center;
+    color: #444;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.sub-section h3 {
+    color: #00884c;
+    margin-bottom: 20px;
+}
+
+/* Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.card h4 {
+    color: #006629;
+}
+
+.read-btn {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #00994d;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.source-info {
+    margin-top: 15px;
+    color: #555;
+    font-style: italic;
+}
+
+/* Videos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.video-grid iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+}
+
+/* Reels */
+.reels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.reel-card {
+    text-align: center;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.reel-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="topnav">
+  <div><strong>शिक्षण आणि युवक कोपरा</strong></div>
+  <div>
+    <a href="index.html">🏠 मुख्यपृष्ठ</a>
+    <a onclick="history.back()" style="cursor:pointer;">⬅️ मागे</a>
+  </div>
+</div>
+
+<!-- SCHOOLS -->
+<!-- SCHOOLS (UPDATED) -->
+<section class="section">
+<h2>🏫 गावातील शाळांची सविस्तर माहिती</h2>
+<p class="section-desc">
+गावात एकूण <b>२ शाळा</b> असून विद्यार्थ्यांसाठी उत्तम शैक्षणिक वातावरण, प्रशिक्षित शिक्षक आणि मूलभूत सुविधा उपलब्ध आहेत.
+</p>
+
+<table>
+<thead>
+<tr>
+  <th>शाळेचे नाव</th>
+  <th>इयत्ता</th>
+  <th>एकूण विद्यार्थी</th>
+  <th>मुलं</th>
+  <th>मुली</th>
+  <th>शिक्षक</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+  <td><b>जिल्हा परिषद प्राथमिक शाळा</b></td>
+  <td>1 ते 4</td>
+  <td>120</td>
+  <td>65</td>
+  <td>55</td>
+  <td>6</td>
+</tr>
+
+<tr>
+  <td><b>जिल्हा परिषद माध्यमिक शाळा</b></td>
+  <td>5 ते 10</td>
+  <td>210</td>
+  <td>110</td>
+  <td>100</td>
+  <td>12</td>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+<h3 style="color:#008542; margin-top:20px;">🌱 इतर शैक्षणिक उपक्रम</h3>
+<ul>
+  <li>खाजगी / NGO / ट्रस्ट संचालित शिकवणी केंद्र</li>
+  <li>डिजिटल शिक्षण (स्मार्ट क्लासरूम)</li>
+  <li>विद्यार्थ्यांसाठी वाचनालय व ई-लायब्ररी</li>
+  <li>विज्ञान, कला व क्रीडा स्पर्धांचे आयोजन</li>
+</ul>
+
+</section>
+
+
+<!-- PERFORMANCE -->
+<section class="section" id="performanceSection">
+<h2>📘 विद्यार्थ्यांची शैक्षणिक कामगिरी</h2>
+
+<table id="performanceTable">
+<thead>
+<tr>
+  <th>विद्यार्थी</th>
+  <th>इयत्ता</th>
+  <th>टक्केवारी</th>
+  <th>स्थिती</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>रोहन जाधव</td><td>१० वी</td><td>९१%</td><td>उत्तीर्ण</td></tr>
+<tr><td>स्नेहा पाटील</td><td>९ वी</td><td>८८%</td><td>उत्तीर्ण</td></tr>
+<tr><td>आदित्य शिंदे</td><td>८ वी</td><td>७६%</td><td>उत्तीर्ण</td></tr>
+</tbody>
+</table>
+
+<button class="pdf-btn" onclick="downloadPDF('performanceTable','कामगिरी अहवाल')">📄 PDF डाउनलोड</button>
+</section>
+
+<!-- SCHOLARSHIP -->
+<section class="section">
+<h2>🎓 शिष्यवृत्ती योजना</h2>
+<ul>
+  <li>महात्मा फुले शिष्यवृत्ती</li>
+  <li>ई-कल्याण पोर्टल योजना</li>
+  <li>OBC / SC / ST विद्यार्थ्यांसाठी विशेष सहाय्य</li>
+  <li>क्रीडा व कला कौशल्य आधारित शिष्यवृत्ती</li>
+</ul>
+</section>
+
+<!-- CAREER -->
+<section class="section">
+<h2>💼 करिअर मार्गदर्शन</h2>
+<p>विद्यार्थ्यांसाठी करिअर मार्गदर्शन:</p>
+<ul>
+  <li>पोलीस भरती / सैन्य भरती माहिती</li>
+  <li>ITI, Polytechnic, Diploma माहिती</li>
+  <li>शासकीय परीक्षा (MPSC/SSC/Talathi/Banking)</li>
+  <li>कॉम्प्युटर कोर्सेस व डिजिटल कौशल्ये</li>
+</ul>
+</section>
+
+<!-- YOUTH ACTIVITIES -->
+<section class="section">
+<h2>🏅 क्रीडा आणि NSS उपक्रम</h2>
+<ul>
+  <li>NSS स्वयंसेवक उपक्रम</li>
+  <li>ग्राम स्वच्छता मोहीम</li>
+  <li>खेळ स्पर्धा — कबड्डी, खो-खो, क्रिकेट</li>
+  <li>आरोग्य जागरूकता कार्यक्रम</li>
+</ul>
+</section>
+
+<!-- STUDENT OF MONTH -->
+<section class="section">
+<h2>🌟 महिन्याचा विद्यार्थी</h2>
+<p><b>या महिन्याचा विद्यार्थी:</b> <u>साक्षी भोसले (इयत्ता 10 वी)</u></p>
+<p>कारण: उत्कृष्ट वर्तन + ९२% गुण + क्रीडा क्षेत्रातील कामगिरी</p>
+</section>
+
+<!-- 🌟 YOUTH SPEAK SECTION -->
+<section id="youthSpeak" class="section">
+    <h2>🎤 Youth Speak – विद्यार्थ्यांचे विचार, व्हिडिओ, आणि Reels</h2>
+    <p class="section-desc">गावातील विद्यार्थ्यांचे लेख, शैक्षणिक व्हिडिओ, प्रेरणादायी Reels आणि NSS उपक्रम येथे पाहू शकता.</p>
+
+    <!-- 1️⃣ STUDENT BLOGS -->
+    <div class="sub-section">
+        <h3>📘 विद्यार्थ्यांचे लेख (Student Blogs)</h3>
+
+        <div class="card-grid">
+            <div class="card">
+                <h4>“माझे स्वप्न – माझा करिअर मार्ग”</h4>
+                <p>— *राज कुंदर, इयत्ता १० वी*</p>
+                <p>माझे स्वप्न डॉक्टर होण्याचे आहे. विज्ञान विषयातील आवड आणि समाजासाठी काहीतरी करण्याची इच्छा यामुळे मी या क्षेत्रात जाण्याचा निर्णय घेतला...</p>
+                <button class="read-btn">पूर्ण वाचा</button>
+            </div>
+
+            <div class="card">
+                <h4>परिक्षा तयारी Tips</h4>
+                <p>— *नेहा शिंदे, इयत्ता १२ वी*</p>
+                <p>दररोज ३ तास अभ्यास करा, स्वतःचे notes तयार करा आणि वेळेचे नियोजन करा. MCQ प्रॅक्टिस नक्की करा...</p>
+                <button class="read-btn">पूर्ण वाचा</button>
+            </div>
+
+            <div class="card">
+                <h4>खेळातील अनुभव – कबड्डी</h4>
+                <p>— *समीर पवार, इयत्ता ९ वी*</p>
+                <p>आमच्या शाळेने जिल्हास्तरीय स्पर्धेत भाग घेतला. मला 'बेस्ट रेडर' पुरस्कार मिळाला, हा अनुभव आयुष्यभर लक्षात राहील...</p>
+                <button class="read-btn">पूर्ण वाचा</button>
+            </div>
+
+            <div class="card">
+                <h4>विज्ञान प्रदर्शनातील माझा अनुभव</h4>
+                <p>— *काजल थोरात, इयत्ता ८ वी*</p>
+                <p>या वर्षी मी “हरित ऊर्जा मॉडेल” सादर केले. शिक्षकांचे मार्गदर्शन आणि पालकांचा आधार मला प्रेरणा देणारा होता...</p>
+                <button class="read-btn">पूर्ण वाचा</button>
+            </div>
+        </div>
+
+        <p class="source-info">
+            📌 लेख मिळाले: शाळेचे मुख्याध्यापक, मराठी/इंग्रजी शिक्षक, विद्यार्थी & Google Form
+        </p>
+    </div>
+
+    <!-- 2️⃣ YOUTUBE EDUCATIONAL VIDEOS -->
+    <div class="sub-section">
+        <h3>🎬 YouTube शैक्षणिक व्हिडिओ</h3>
+
+        <div class="video-grid">
+            <iframe src="https://www.youtube.com/embed/2VZHqkFNx2A" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/lz8Lw9G9zNo" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/wIuCpe2U65U" allowfullscreen></iframe>
+        </div>
+
+        <p class="source-info">
+            📌 कंटेंट: SCERT Maharashtra, Khan Academy Marathi, शिक्षकांचे रेकॉर्डेड व्हिडिओ
+        </p>
+    </div>
+
+    <!-- 3️⃣ INSTAGRAM REELS STYLE GALLERY -->
+    <div class="sub-section">
+        <h3>📱 Instagram Reels / माहितीपूर्ण पोस्ट</h3>
+
+        <div class="reels-grid">
+            <div class="reel-card">
+                <img src="https://i.ibb.co/z5j0PhG/motivation.jpg" alt="Motivation Reel">
+                <p>प्रेरणादायी Reel – “Never Give Up”</p>
+            </div>
+
+            <div class="reel-card">
+                <img src="https://i.ibb.co/fqk6vcv/career.jpg" alt="Career Info">
+                <p>30-sec करिअर माहिती – “Engineer कसा बनावे?”</p>
+            </div>
+
+            <div class="reel-card">
+                <img src="https://i.ibb.co/8M1qXsg/science.jpg" alt="Science Reel">
+                <p>“एक मिनिट विज्ञान” – Solar System</p>
+            </div>
+
+            <div class="reel-card">
+                <img src="https://i.ibb.co/MZDfHT1/talent.jpg" alt="Student Talent">
+                <p>विद्यार्थी Talent – Singing Performance 🎤</p>
+            </div>
+        </div>
+
+        <p class="source-info">
+            📌 कंटेंट: विद्यार्थी, NSS विद्यार्थ्यांचे उपक्रम, Instagram/YT Reels
+        </p>
+    </div>
+
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="section">
+<h2>🖼️ फोटो गॅलरी</h2>
+<div class="gallery-grid">
+  <img src="https://via.placeholder.com/400x250">
+  <img src="https://via.placeholder.com/400x250">
+  <img src="https://via.placeholder.com/400x250">
+  <img src="https://via.placeholder.com/400x250">
+  <img src="https://via.placeholder.com/400x250">
+</div>
+</section>
+
+<!-- VIDEO GALLERY -->
+<section class="section">
+<h2>🎬 व्हिडिओ गॅलरी</h2>
+<div class="video-grid">
+<iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+<iframe src="https://www.youtube.com/embed/ysz5S6PUM-U"></iframe>
+<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+</div>
+</section>
+
+<footer style="text-align:center; padding:20px; margin-top:40px;">
+© 2025 ग्रामपंचायत — शिक्षण व युवक कोपरा
+</footer>
+
+<script>
+/* PHOTO LIGHTBOX */
+document.querySelectorAll('.gallery-grid img').forEach(img=>{
+  img.addEventListener('click', ()=>{
+    let overlay=document.createElement('div');
+    overlay.style.position='fixed';
+    overlay.style.top=0;
+    overlay.style.left=0;
+    overlay.style.width='100%';
+    overlay.style.height='100%';
+    overlay.style.background='rgba(0,0,0,0.9)';
+    overlay.style.display='flex';
+    overlay.style.alignItems='center';
+    overlay.style.justifyContent='center';
+    overlay.style.cursor='zoom-out';
+    overlay.style.zIndex=99999;
+
+    let big=document.createElement('img');
+    big.src=img.src;
+    big.style.maxWidth='90%';
+    big.style.maxHeight='90%';
+    big.style.borderRadius='12px';
+
+    overlay.appendChild(big);
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click', ()=>overlay.remove());
+  });
+});
+
+/* PDF DOWNLOAD */
+function downloadPDF(tableId,fileName){
+    let element=document.getElementById(tableId);
+    html2pdf().from(element).set({
+        margin:0.3,
+        filename:fileName+'.pdf',
+        html2canvas:{scale:2},
+        jsPDF:{unit:'in',format:'a4'}
+    }).save();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>नागरिक सेवा आणि फॉर्म्स | ग्रामपंचायत</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body { font-family: "Noto Sans Devanagari", sans-serif; background:#f4f9f6; }
+    section { width:90%; max-width:1000px; margin:20px auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px #ccc; }
+    h2 { color:#007b3a; border-left:5px solid #007b3a; padding-left:10px; }
+    .service-card { margin-top:15px; padding:15px; background:#f7fff9; border-radius:8px; }
+    .service-card a { color:#007b3a; text-decoration:none; font-weight:bold; }
+    .service-card a:hover { text-decoration:underline; }
+    .qr-section { text-align:center; margin-top:15px; }
+    .qr-section img { max-width:200px; border-radius:8px; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<!-- 🔰 HEADER -->
+<header class="animated-bg">
+    <h1 style="text-align:center; margin:0; padding:3px 0 !important; font-size:1.7rem; font-weight:600;">
+        📋 नागरिक सेवा आणि फॉर्म्स
+    </h1>
+
+    <div class="menu-btn" id="menu-btn">
+        <span class="hamburger">☰</span>
+        <span class="close">✖</span>
+    </div>
+
+    <!-- NAVBAR CENTERED -->
+    <nav class="main-nav" id="main-nav" style="justify-content:center; align-items:center; flex-wrap:wrap; margin-top:10px; gap:10px;">
+        <a href="index.html">🏠 मुख्यपृष्ठ</a>
+
+        <div class="dropdown">
+            <button>🏛️ पंचायत</button>
+            <div class="dropdown-content">
+                <a href="about.html">ग्रामपंचायतीबद्दल</a>
+                <a href="infrastructure.html">पायाभूत सुविधा</a>
+                <a href="culture.html">संस्कृती व ओळख</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>📜 योजना</button>
+            <div class="dropdown-content">
+                <a href="schemes.html">योजना व लाभ</a>
+                <a href="announcements.html">परिपत्रके</a>
+                <a href="services.html" class="active">नागरिक सेवा</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>🚧 विकास</button>
+            <div class="dropdown-content">
+                <a href="projects.html">मुख्य प्रकल्प</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="employment.html">रोजगार</a>
+                <a href="education.html">शिक्षण</a>
+            </div>
+        </div>
+
+        <a href="gallery.html">🖼️ गॅलरी</a>
+        <a href="grievance.html">📮 तक्रार</a>
+        <a href="contact.html">📞 संपर्क</a>
+     <!-- डॅशबोर्ड + अर्थसंकल्प -->
+    <div class="dropdown">
+        <button>📊 डॅशबोर्ड</button>
+        <div class="dropdown-content">
+            <a href="dashboard.html">मुख्य डॅशबोर्ड</a>
+            <a href="finance.html">अर्थसंकल्प आणि पारदर्शकता</a>
+        </div>
+    </div>
+    </nav>
+</header>
+<!-- 🔹 Stylish Service Sections -->
+<section class="service-section">
+
+<!-- प्रमाणपत्रे Section -->
+<section>
+  <h2 style="text-align:center; color:#007b3a;">📄 प्रमाणपत्रे</h2>
+  <div class="certificate-row">
+    <!-- जन्म प्रमाणपत्र -->
+    <div class="certificate-card" data-pdf="assets/forms/birth_certificate.pdf">
+      <h3>जन्म प्रमाणपत्र</h3>
+      <p>नवीन जन्म नोंद प्रमाणपत्र पाहण्यासाठी क्लिक करा.</p>
+      <button class="view-btn">📄 पाहा</button>
+    </div>
+
+    <!-- मृत्यू प्रमाणपत्र -->
+    <div class="certificate-card" data-pdf="assets/forms/death_certificate.pdf">
+      <h3>मृत्यू प्रमाणपत्र</h3>
+      <p>मृत्यू प्रमाणपत्र पाहण्यासाठी क्लिक करा.</p>
+      <button class="view-btn">📄 पाहा</button>
+    </div>
+
+    <!-- RTS प्रमाणपत्र -->
+    <div class="certificate-card" data-pdf="assets/forms/rts_certificate.pdf">
+      <h3>RTS प्रमाणपत्र</h3>
+      <p>RTS प्रमाणपत्र पाहण्यासाठी क्लिक करा.</p>
+      <button class="view-btn">📄 पाहा</button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for PDF -->
+<div class="modal" id="pdfModal">
+  <div class="modal-content">
+    <button class="close-btn" id="closePdfModal">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<style>
+/* Row styling */
+.certificate-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Card styling */
+.certificate-card {
+  background: #f7fff9;
+  border-left: 5px solid #007b3a;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.certificate-card button.view-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  background: #007b3a;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.certificate-card button.view-btn:hover {
+  background: #009e4f;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  position: relative;
+  text-align: left;
+}
+.modal-content iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.close-btn {
+  position: absolute;
+  top:10px;
+  right:15px;
+  background:#007b3a;
+  color:white;
+  border:none;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  font-size:18px;
+  cursor:pointer;
+}
+.download-link {
+  display:inline-block;
+  margin-top:10px;
+  background:#007b3a;
+  color:white;
+  padding:8px 12px;
+  border-radius:5px;
+  text-decoration:none;
+}
+.download-link:hover { background:#009e4f; }
+</style>
+
+<script>
+// Open PDF in modal
+const pdfModal = document.getElementById('pdfModal');
+const modalBody = document.getElementById('modalBody');
+document.querySelectorAll('.certificate-card').forEach(card => {
+  card.addEventListener('click', ()=>{
+    const pdf = card.dataset.pdf;
+    modalBody.innerHTML = `
+      <iframe src="${pdf}"></iframe>
+      <a href="${pdf}" download class="download-link">📥 डाउनलोड करा</a>
+    `;
+    pdfModal.style.display = 'flex';
+  });
+});
+
+// Close modal function
+function closePDFModal(){
+  pdfModal.style.display = 'none';
+}
+
+// Close on × button
+document.getElementById('closePdfModal').addEventListener('click', closePDFModal);
+
+// Close modal when clicking outside modal-content
+pdfModal.addEventListener('click', function(e){
+  if(e.target === pdfModal){
+    closePDFModal();
+  }
+});
+
+// Close modal on ESC key
+document.addEventListener('keydown', function(e){
+  if(e.key === "Escape"){
+    closePDFModal();
+  }
+});
+</script>
+
+</section>
+
+<section>
+    <!-- तक्रार निवारण पोर्टल -->
+    <div class="service-card">
+        <h3>📮 तक्रार निवारण पोर्टल</h3>
+        <p>तुमच्या तक्रारी आणि सूचना येथे सबमिट करा:</p>
+        <a href="grievance.html">तक्रार सबमिट करा</a>
+    </div>
+
+    <!-- फीडबॅक आणि सूचना -->
+    <div class="service-card">
+        <h3>💬 फीडबॅक व सूचना</h3>
+        <p>ग्रामपंचायत सेवा सुधारण्यासाठी आपले अभिप्राय पाठवा:</p>
+        <a href="feedback.html">फीडबॅक सबमिट करा</a>
+    </div>
+
+</section>
+
+
+<!-- ऑनलाइन कर भरणा -->
+<section>
+    <h2>💰 ऑनलाइन कर भरणा</h2>
+    <div class="service-card">
+        <p>आपल्या स्थानिक करांचे ऑनलाइन भरणा करा. QR स्कॅन करा किंवा क्लिक करून Payment पेजवर जा:</p>
+        <div class="qr-section">
+            <img id="taxQR" src="assets/images/tax_qr.png" alt="ऑनलाइन कर भरणा QR Code">
+        </div>
+    </div>
+</section>
+
+<!-- Modal for QR -->
+<div id="qrModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); justify-content:center; align-items:center;">
+  <div style="background:white; padding:20px; border-radius:10px; max-width:400px; text-align:center; position:relative;">
+    <button onclick="closeModal()" style="position:absolute; top:10px; right:15px; background:#007b3a; color:white; border:none; border-radius:50%; width:30px; height:30px; cursor:pointer; font-size:18px;">×</button>
+    <h3>ऑनलाइन कर भरणा</h3>
+    <p>कृपया खालील लिंकवर क्लिक करा किंवा QR स्कॅन करा:</p>
+    <a href="https://your-upi-payment-link.com" target="_blank" style="display:inline-block; padding:10px 15px; background:#007b3a; color:white; border-radius:5px; text-decoration:none;">💳 Pay Now</a>
+    <p style="margin-top:10px;">आपल्या मोबाइल UPI app मध्ये QR स्कॅन करून देखील पेमेंट करू शकता.</p>
+  </div>
+</div>
+
+<script>
+  const qrImg = document.getElementById('taxQR');
+  const qrModal = document.getElementById('qrModal');
+
+  qrImg.addEventListener('click', () => {
+    qrModal.style.display = 'flex';
+    qrModal.style.justifyContent = 'center';
+    qrModal.style.alignItems = 'center';
+  });
+
+  function closeModal() {
+    qrModal.style.display = 'none';
+  }
+</script>
+
+<script src="assets/js/script1.js"></script>
+
+<footer style="text-align:center; padding:15px; margin-top:20px;">
+  © 2025 ग्रामपंचायत चोपडज | Developed by NovaTech Data Solutions LLP
+</footer>
+
+</body>
+</html>

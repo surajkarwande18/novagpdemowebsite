@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>घोषणा आणि परिपत्रके | ग्रामपंचायत</title>
+<link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      background: #f4f9f6;
+      font-family: "Noto Sans Devanagari", sans-serif;
+    }
+
+ 
+
+    header h1 { margin: 5px 0; font-size: 1.8rem; }
+    header nav a {
+      color: white; margin: 0 10px; text-decoration: none;
+      font-weight: bold; transition: 0.3s;
+    }
+    header nav a:hover { text-decoration: underline; }
+    header nav a.active {
+      border-bottom: 2px solid #fff; padding-bottom: 3px;
+    }
+
+    section { margin: 30px auto; width: 90%; background: #fff; padding: 20px;
+      border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+    h2 { color: #007b3a; border-left: 5px solid #007b3a; padding-left: 10px; }
+
+    table {
+      width: 100%; margin-top: 10px; border-collapse: collapse;
+      background: #fefefe;
+    }
+    th, td {
+      padding: 10px; border-bottom: 1px solid #ddd; text-align: left;
+    }
+    th {
+      background: #007b3a; color: white;
+    }
+    tr:hover { background: #eefaf0; }
+
+    /* Circulars */
+    .circular-list li {
+      margin: 8px 0;
+      background: #f7fff9;
+      padding: 10px;
+      border-left: 5px solid #007b3a;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Modal */
+    .modal {
+      display: none; position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center; align-items: center; z-index: 1000;
+    }
+    .modal-content {
+      background: white; padding: 20px; border-radius: 10px;
+      width: 90%; max-width: 700px; text-align: left; position: relative;
+    }
+    .close-btn {
+      position: absolute; top: 10px; right: 15px;
+      background: #007b3a; color: white; border: none;
+      border-radius: 50%; width: 30px; height: 30px;
+      cursor: pointer; font-size: 18px;
+    }
+    iframe.pdf-viewer {
+      width: 100%; height: 400px; border-radius: 8px; margin-top: 10px;
+    }
+    a.download-link {
+      display: inline-block; margin-top: 10px;
+      background: #007b3a; color: white; padding: 8px 12px;
+      border-radius: 5px; text-decoration: none;
+    }
+    a.download-link:hover { background: #009e4f; }
+  </style>
+</head>
+<body>
+
+<header class="animated-bg">
+    
+    <!-- TOP TITLE CENTER -->
+    <h1 style="
+        text-align:center;
+        margin:0;
+       padding: 3px 0 !important;
+        font-size:1.7rem;
+        font-weight:600;
+    ">
+        📢 घोषणा आणि परिपत्रके
+    </h1>
+
+    <div class="menu-btn" id="menu-btn">
+    <span class="hamburger">☰</span>
+    <span class="close">✖</span>
+  </div>
+
+    <!-- NAVBAR CENTERED -->
+    <nav class="main-nav" id="main-nav" style="
+      
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        margin-top:10px;
+        gap:10px;
+    ">
+        <a href="index.html" class="active">🏠 मुख्यपृष्ठ</a>
+
+        <div class="dropdown">
+            <button>🏛️ पंचायत</button>
+            <div class="dropdown-content">
+                <a href="about.html">ग्रामपंचायतीबद्दल</a>
+                <a href="infrastructure.html">पायाभूत सुविधा</a>
+                <a href="culture.html">संस्कृती व ओळख</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>📜 योजना</button>
+            <div class="dropdown-content">
+                <a href="schemes.html">योजना व लाभ</a>
+                <a href="announcements.html">परिपत्रके</a>
+                <a href="services.html">नागरिक सेवा</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>🚧 विकास</button>
+            <div class="dropdown-content">
+                <a href="projects.html">मुख्य प्रकल्प</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="employment.html">रोजगार</a>
+                <a href="education.html">शिक्षण</a>
+            </div>
+        </div>
+
+        <a href="gallery.html">🖼️ गॅलरी</a>
+        <a href="grievance.html">📮 तक्रार</a>
+        <a href="contact.html">📞 संपर्क</a>
+        <a href="dashboard.html">📊 डॅशबोर्ड</a>
+    </nav>
+
+</header>
+
+
+<!-- 🗓️ बैठकीच्या सूचना -->
+<section>
+  <h2>🗓️ बैठकीच्या सूचना</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>दिनांक</th>
+        <th>बैठक</th>
+        <th>ठिकाण</th>
+        <th>अधिक माहिती</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>15 नोव्हेंबर 2025</td>
+        <td>ग्रामसभा</td>
+        <td>ग्रामपंचायत कार्यालय</td>
+        <td><a href="#" onclick="openPDF('assets/pdfs/notice1.pdf')">📄 PDF पाहा</a></td>
+      </tr>
+      <tr>
+        <td>22 नोव्हेंबर 2025</td>
+        <td>आरोग्य समिती बैठक</td>
+        <td>प्राथमिक आरोग्य केंद्र</td>
+        <td><a href="#" onclick="openPDF('assets/pdfs/notice2.pdf')">📄 PDF पाहा</a></td>
+      </tr>
+      <tr>
+        <td>28 नोव्हेंबर 2025</td>
+        <td>पाणीपुरवठा आढावा</td>
+        <td>सचिवालय सभागृह</td>
+        <td><a href="#" onclick="openPDF('assets/pdfs/notice3.pdf')">📄 PDF पाहा</a></td>
+      </tr>
+      <tr>
+        <td>05 डिसेंबर 2025</td>
+        <td>महिला बचतगट सभा</td>
+        <td>वाचनालय हॉल</td>
+        <td><a href="#" onclick="openPDF('assets/pdfs/notice4.pdf')">📄 PDF पाहा</a></td>
+      </tr>
+      <tr>
+        <td>15 डिसेंबर 2025</td>
+        <td>शिक्षण समिती</td>
+        <td>शाळा भवन</td>
+        <td><a href="#" onclick="openPDF('assets/pdfs/notice5.pdf')">📄 PDF पाहा</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 📜 परिपत्रके / आदेश / सूचना -->
+<section>
+  <h2>📜 परिपत्रके / आदेश / सूचना</h2>
+  <ul class="circular-list">
+    <li data-type="pdf" data-src="assets/pdfs/circular1.pdf">स्वच्छ भारत अभियान - नवीन मार्गदर्शक तत्त्वे (05/11/2025)</li>
+    <li data-type="image" data-src="assets/imgs/poster1.jpg">पाणी बचत सप्ताह पोस्टर</li>
+    <li data-type="text" data-desc="शाळांमधील कचरा व्यवस्थापन व प्लास्टिक बंदी संदर्भातील सूचना.">शाळांमधील कचरा व्यवस्थापन सूचना</li>
+    <li data-type="pdf" data-src="assets/pdfs/circular4.pdf">अंगणवाडी नूतनीकरण निधी वाटप आदेश</li>
+    <li data-type="image" data-src="assets/imgs/clean-drive.jpg">दिवाळी स्वच्छता मोहीम अहवाल</li>
+    <li data-type="text" data-desc="जलसंधारण कार्य प्रगती अहवाल सादर करण्याची अंतिम मुदत: 25 डिसेंबर 2025.">जलसंधारण प्रगती अहवाल</li>
+    <li data-type="pdf" data-src="assets/pdfs/circular6.pdf">सौर दिवे परीक्षण आदेश (ऊर्जा विभाग)</li>
+    <li data-type="pdf" data-src="assets/pdfs/circular7.pdf">ग्रामसभा उपस्थिती अनिवार्य बाबत पत्र (ग्रामीण विकास विभाग)</li>
+  </ul>
+</section>
+
+<!-- 📅 आगामी घटना व बैठकांचे वेळापत्रक -->
+<section class="section">
+  <h2>📅 आगामी घटना व बैठकांचे वेळापत्रक</h2>
+  <iframe 
+    src="https://calendar.google.com/calendar/embed?src=a22a6ead500774d1465aa7cfc8cd77b5cf40921d4e2073063096b520ff9ac64d%40group.calendar.google.com&ctz=Asia%2FKolkata" 
+    style="border:0; width:100%; height:500px;" 
+    frameborder="0" scrolling="no">
+  </iframe>
+  <p style="text-align:center; margin-top:10px; color:#555;">
+    आगामी ग्रामसभा, शिबिरे, मोहिमा आणि बैठका येथे पाहू शकता 📆
+  </p>
+</section>
+
+<!-- Modal for PDF / Circulars -->
+<div class="modal" id="pdfModal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal()">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+  // PDF popup for meeting notices
+  function openPDF(pdfPath) {
+    const modal = document.getElementById('pdfModal');
+    document.getElementById('modalBody').innerHTML = `
+      <h3>📄 बैठक माहिती</h3>
+      <iframe class="pdf-viewer" src="${pdfPath}"></iframe>
+      <a class="download-link" href="${pdfPath}" download>📥 डाउनलोड करा</a>`;
+    modal.style.display = 'flex';
+  }
+
+  // Circular list popup (PDF / Image / Text)
+  document.querySelectorAll('.circular-list li').forEach(li=>{
+    li.addEventListener('click',()=>{
+      const type=li.dataset.type, src=li.dataset.src, desc=li.dataset.desc;
+      let content="";
+      if(type==='pdf') content=`<h3>${li.innerText}</h3><iframe src="${src}" class="pdf-viewer"></iframe><a href="${src}" download class="download-link">📥 डाउनलोड करा</a>`;
+      else if(type==='image') content=`<h3>${li.innerText}</h3><img src="${src}" style="width:100%;border-radius:8px;">`;
+      else content=`<h3>${li.innerText}</h3><p>${desc}</p>`;
+      document.getElementById('modalBody').innerHTML=content;
+      document.getElementById('pdfModal').style.display='flex';
+    });
+  });
+
+  function closeModal(){ document.getElementById('pdfModal').style.display='none'; }
+</script>
+
+<!-- External Script (Correct way) -->
+    <script src="assets/js/script1.js"></script>
+
+<footer style="text-align:center; padding:15px; margin-top:20px;">
+  <p>© 2025 ग्रामपंचायत | Developed by NovaTech Data Solutions LLP</p>
+</footer>
+
+</body>
+</html>

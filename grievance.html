@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>तक्रार फॉर्म | ग्रामपंचायत</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+body { font-family:"Noto Sans Devanagari", sans-serif; background:#f4f9f6; margin:0; padding:0; }
+
+header.animated-bg {
+    background: linear-gradient(90deg, #FF9933, #FFFFFF, #138808); /* Indian flag gradient */
+    color: black;
+    text-align:center;
+    padding:20px;
+}
+
+header h1 { margin:0; font-size:1.7rem; font-weight:600; }
+
+nav.main-nav { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:10px; }
+nav.main-nav a, nav.main-nav .dropdown button {
+    color:black; text-decoration:none; padding:8px 12px; border:none; background:none; cursor:pointer; font-weight:bold; border-radius:5px; transition:0.3s;
+}
+nav.main-nav a:hover, nav.main-nav .dropdown button:hover { background: rgba(0,0,0,0.1); }
+nav.main-nav a.active { border-bottom:2px solid black; }
+
+.section-container {
+    display: flex;
+    gap: 30px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+}
+
+.form-wrapper {
+    flex: 2;
+    min-width: 300px;
+}
+
+.qr-wrapper {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+iframe.form-embed {
+    width: 100%;
+    height: 900px;
+    border:none;
+    border-radius:12px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.1);
+}
+
+.qr-wrapper img {
+    width: 150px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.qr-wrapper p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #138808;
+}
+
+footer { text-align:center; padding:15px; margin-top:20px; color:#555; background:#e6f2ea; }
+
+@media(max-width:900px){
+    .section-container { flex-direction: column; align-items: center; }
+    .qr-wrapper { margin-top:20px; }
+}
+</style>
+</head>
+<body>
+
+<header class="animated-bg">
+<h1>📮 नागरिक तक्रार फॉर्म</h1>
+
+ <div class="menu-btn" id="menu-btn">
+    <span class="hamburger">☰</span>
+    <span class="close">✖</span>
+  </div>
+
+
+<nav class="main-nav">
+    <a href="index.html">🏠 मुख्यपृष्ठ</a>
+
+    <div class="dropdown">
+        <button>🏛️ पंचायत</button>
+        <div class="dropdown-content">
+            <a href="about.html">ग्रामपंचायतीबद्दल</a>
+            <a href="infrastructure.html">पायाभूत सुविधा</a>
+            <a href="culture.html">संस्कृती व ओळख</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button>📜 योजना</button>
+        <div class="dropdown-content">
+            <a href="schemes.html">योजना व लाभ</a>
+            <a href="announcements.html">परिपत्रके</a>
+            <a href="services.html" class="active">नागरिक सेवा</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button>🚧 विकास</button>
+        <div class="dropdown-content">
+            <a href="projects.html">मुख्य प्रकल्प</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="employment.html">रोजगार</a>
+            <a href="education.html">शिक्षण</a>
+        </div>
+    </div>
+
+    <a href="gallery.html">🖼️ गॅलरी</a>
+    <a href="grievance.html" class="active">📮 तक्रार</a>
+    <a href="contact.html">📞 संपर्क</a>
+    <a href="dashboard.html">📊 डॅशबोर्ड</a>
+</nav>
+</header>
+
+
+<style>
+/* Hamburger button styling */
+.menu-btn {
+  display:none;
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:2rem;
+  cursor:pointer;
+  user-select:none;
+  z-index:1001;
+}
+
+/* Mobile responsive */
+@media(max-width:900px){
+  nav.main-nav {
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    width:100%;
+    background:#fff;
+    position:absolute;
+    top:70px;
+    left:0;
+    padding:10px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  }
+  nav.main-nav.show { display:flex; }
+  .menu-btn { display:block; color:black; }
+  .dropdown-content { position:relative; box-shadow:none; }
+}
+</style>
+
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const mainNav = document.querySelector('nav.main-nav');
+
+menuBtn.addEventListener('click', () => {
+  mainNav.classList.toggle('show');
+});
+</script>
+
+
+<!-- Form and QR side-by-side -->
+<section class="section-container">
+    <div class="form-wrapper">
+        <iframe class="form-embed" 
+        src="https://forms.gle/2kJxctyxYoTAykbFA">
+        Loading…</iframe>
+    </div>
+    <div class="qr-wrapper">
+        <p>किंवा QR code scan करून फीडबॅक / तक्रार सबमिट करा</p>
+        
+        <img src="assets/images/grievance_qr.png" alt="Grievance QR Code" class="qr-code">
+    </div>
+</section>
+
+<script src="assets/js/script1.js"></script>
+
+<footer>
+© 2025 ग्रामपंचायत चोपडज | Developed by NovaTech Data Solutions LLP
+</footer>
+
+</body>
+</html>

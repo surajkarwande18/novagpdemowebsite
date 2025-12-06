@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>नागरिक सेवा पोर्टल | ग्रामपंचायत चोपडज</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+body { font-family: "Noto Sans Devanagari", sans-serif; margin:0; background:#f4f9f6; }
+header { background: linear-gradient(90deg,#ff9933,#ffffff,#138808); color:Black; text-align:center; padding:20px; }
+header h1 { margin:0; font-size:1.7rem; font-weight:600; }
+section { width:90%; max-width:1000px; margin:20px auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px #ccc; }
+h2 { color:#007b3a; border-left:5px solid #007b3a; padding-left:10px; margin-top:0; }
+.service-card { margin-top:15px; padding:15px; background:#f7fff9; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1); text-align:center; }
+.service-card a { color:#007b3a; text-decoration:none; font-weight:bold; }
+.service-card a:hover { text-decoration:underline; }
+.certificate-row { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:20px; }
+.certificate-card { background:#f7fff9; border-left:5px solid #007b3a; border-radius:10px; padding:20px; width:300px; box-shadow:0 5px 15px rgba(0,0,0,0.1); text-align:center; cursor:pointer; transition:0.3s; }
+.certificate-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+.certificate-card button { margin-top:10px; padding:8px 15px; border:none; background:#007b3a; color:white; border-radius:6px; cursor:pointer; transition:0.3s; }
+.certificate-card button:hover { background:#009e4f; }
+.modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000; }
+.modal-content { background:white; padding:20px; border-radius:12px; width:90%; max-width:700px; position:relative; text-align:left; }
+.modal-content iframe { width:100%; height:450px; border-radius:8px; margin-top:10px; }
+.close-btn { position:absolute; top:10px; right:15px; background:#007b3a; color:white; border:none; border-radius:50%; width:30px; height:30px; font-size:18px; cursor:pointer; }
+.download-link { display:inline-block; margin-top:10px; background:#007b3a; color:white; padding:8px 12px; border-radius:5px; text-decoration:none; }
+.download-link:hover { background:#009e4f; }
+input, textarea, select, button { font-family:"Noto Sans Devanagari", sans-serif; }
+input, textarea, select { width:100%; padding:10px; margin-top:5px; border:1px solid #ccc; border-radius:6px; }
+button.submit-btn { background:#007b3a; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; margin-top:10px; }
+button.submit-btn:hover { background:#009e4f; }
+.map-container { width:100%; height:400px; border-radius:10px; overflow:hidden; margin-top:15px; }
+.partner-list { display:flex; flex-wrap:wrap; gap:15px; margin-top:10px; }
+.partner-card { background:#f7fff9; padding:15px; border-radius:8px; flex:1 1 200px; box-shadow:0 3px 8px rgba(0,0,0,0.1); text-align:center; }
+.qr-section { text-align:center; margin-top:15px; }
+.qr-section img { max-width:200px; border-radius:8px; cursor:pointer; }
+</style>
+</head>
+<body>
+
+
+<header class="animated-bg">
+<h1>🏢 संपर्क व सहकार्य | ग्रामपंचायत चोपडज</h1>
+
+ <div class="menu-btn" id="menu-btn">
+    <span class="hamburger">☰</span>
+    <span class="close">✖</span>
+  </div>
+
+
+<nav class="main-nav">
+    <a href="index.html">🏠 मुख्यपृष्ठ</a>
+
+    <div class="dropdown">
+        <button>🏛️ पंचायत</button>
+        <div class="dropdown-content">
+            <a href="about.html">ग्रामपंचायतीबद्दल</a>
+            <a href="infrastructure.html">पायाभूत सुविधा</a>
+            <a href="culture.html">संस्कृती व ओळख</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button>📜 योजना</button>
+        <div class="dropdown-content">
+            <a href="schemes.html">योजना व लाभ</a>
+            <a href="announcements.html">परिपत्रके</a>
+            <a href="services.html" class="active">नागरिक सेवा</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button>🚧 विकास</button>
+        <div class="dropdown-content">
+            <a href="projects.html">मुख्य प्रकल्प</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="employment.html">रोजगार</a>
+            <a href="education.html">शिक्षण</a>
+        </div>
+    </div>
+
+    <a href="gallery.html">🖼️ गॅलरी</a>
+    <a href="grievance.html">📮 तक्रार</a>
+    <a href="contact.html" class="active">📞 संपर्क</a>
+     <!-- डॅशबोर्ड + अर्थसंकल्प -->
+    <div class="dropdown">
+        <button>📊 डॅशबोर्ड</button>
+        <div class="dropdown-content">
+            <a href="dashboard.html">मुख्य डॅशबोर्ड</a>
+            <a href="finance.html">अर्थसंकल्प आणि पारदर्शकता</a>
+        </div>
+    </div>
+
+</nav>
+</header>
+
+
+<style>
+/* Hamburger button styling */
+.menu-btn {
+  display:none;
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:2rem;
+  cursor:pointer;
+  user-select:none;
+  z-index:1001;
+}
+
+/* Mobile responsive */
+@media(max-width:900px){
+  nav.main-nav {
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    width:100%;
+    background:#fff;
+    position:absolute;
+    top:70px;
+    left:0;
+    padding:10px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  }
+  nav.main-nav.show { display:flex; }
+  .menu-btn { display:block; color:black; }
+  .dropdown-content { position:relative; box-shadow:none; }
+}
+</style>
+
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const mainNav = document.querySelector('nav.main-nav');
+
+menuBtn.addEventListener('click', () => {
+  mainNav.classList.toggle('show');
+});
+</script>
+
+
+
+<!-- प्रमाणपत्रे -->
+<section>
+<h2>📄 प्रमाणपत्रे</h2>
+<div class="certificate-row">
+<div class="certificate-card" data-pdf="assets/forms/birth_certificate.pdf">
+<h3>जन्म प्रमाणपत्र</h3>
+<p>नवीन जन्म नोंद प्रमाणपत्र पाहण्यासाठी क्लिक करा.</p>
+<button>📄 पाहा</button>
+</div>
+<div class="certificate-card" data-pdf="assets/forms/death_certificate.pdf">
+<h3>मृत्यू प्रमाणपत्र</h3>
+<p>मृत्यू प्रमाणपत्र पाहण्यासाठी क्लिक करा.</p>
+<button>📄 पाहा</button>
+</div>
+<div class="certificate-card" data-pdf="assets/forms/rts_certificate.pdf">
+<h3>RTS प्रमाणपत्र</h3>
+<p>RTS प्रमाणपत्र पाहण्यासाठी क्लिक करा.</p>
+<button>📄 पाहा</button>
+</div>
+</div>
+</section>
+
+<!-- PDF Modal -->
+<div class="modal" id="pdfModal">
+<div class="modal-content">
+<button class="close-btn" onclick="closePdfModal()">×</button>
+<div id="modalBody"></div>
+</div>
+</div>
+
+<!-- तक्रार व फीडबॅक -->
+<section>
+<div class="service-card">
+<h3>📮 तक्रार निवारण पोर्टल</h3>
+<p>तुमच्या तक्रारी आणि सूचना येथे सबमिट करा:</p>
+<a href="grievance.html">तक्रार सबमिट करा</a>
+</div>
+
+<div class="service-card">
+<h3>💬 फीडबॅक व सूचना</h3>
+<p>ग्रामपंचायत सेवा सुधारण्यासाठी आपले अभिप्राय पाठवा:</p>
+<a href="feedback.html">फीडबॅक सबमिट करा</a>
+</div>
+</section>
+
+<!-- ऑनलाइन कर भरणा -->
+<section>
+<h2>💰 ऑनलाइन कर भरणा</h2>
+<div class="service-card">
+<p>आपल्या स्थानिक करांचे ऑनलाइन भरणा करा. QR स्कॅन करा किंवा क्लिक करून Payment पेजवर जा:</p>
+<div class="qr-section">
+<img id="taxQR" src="assets/images/tax_qr.png" alt="ऑनलाइन कर भरणा QR Code">
+</div>
+</div>
+</section>
+
+<div id="qrModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); justify-content:center; align-items:center;">
+<div style="background:white; padding:20px; border-radius:10px; max-width:400px; text-align:center; position:relative;">
+<button onclick="closeQrModal()" style="position:absolute; top:10px; right:15px; background:#007b3a; color:white; border:none; border-radius:50%; width:30px; height:30px; cursor:pointer; font-size:18px;">×</button>
+<h3>ऑनलाइन कर भरणा</h3>
+<p>कृपया खालील लिंकवर क्लिक करा किंवा QR स्कॅन करा:</p>
+<a href="https://your-upi-payment-link.com" target="_blank" style="display:inline-block; padding:10px 15px; background:#007b3a; color:white; border-radius:5px; text-decoration:none;">💳 Pay Now</a>
+<p style="margin-top:10px;">आपल्या मोबाइल UPI app मध्ये QR स्कॅन करून देखील पेमेंट करू शकता.</p>
+</div>
+</div>
+
+<!-- संपर्क व सहकार्य -->
+<section>
+<h2>🏢 संपर्क व सहकार्य</h2>
+<p><strong>पत्ता:</strong> ग्रामपंचायत कार्यालय, चोपडज, ता. कर्जत, जि. अहमदनगर</p>
+<p><strong>कामकाजाची वेळ:</strong> सकाळी १०:०० ते संध्याकाळी ५:००</p>
+<p><strong>संपर्क:</strong> ०२४८९-२२४५८७ | <strong>Email:</strong> gpochopdaj@maharashtra.gov.in</p>
+
+
+<!-- 🌍 गावाचा नकाशा (Map Section) -->
+<section id="village-map" class="section map-section">
+  <div class="container">
+    <h2 style="text-align:center; color:#0055aa; margin-bottom:12px;">
+      📍 कार्यालयाचे स्थान नकाशा
+    </h2>
+
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <div id="leafletMap" style="width:100%;height:480px;border-radius:10px;overflow:hidden;box-shadow:0 0 10px rgba(0,0,0,0.2);"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      // 🌐 Coordinates (Chopdaj, Baramati)
+      const lat = 18.15066;
+      const lng = 74.57678;
+
+      // Initialize Map
+      const map = L.map('leafletMap').setView([lat, lng], 14);
+
+      // 🗺️ OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      // 📍 Marker + Popup
+      const marker = L.marker([lat, lng]).addTo(map);
+      marker.bindPopup(`<strong>चोपडज ग्रामपंचायत</strong><br>ता. बारामती, जि. पुणे`).openPopup();
+
+      // 🔵 Optional Circle Highlight
+      L.circle([lat, lng], {
+        radius: 400,
+        color: '#0055ff',
+        fillOpacity: 0.08
+      }).addTo(map);
+    </script>
+  </div>
+</section>
+
+
+<section>
+<h3>💬 नागरिक फीडबॅक फॉर्म</h3>
+<form id="feedbackForm">
+<label for="fname">नाव</label>
+<input type="text" id="fname" name="fname" required>
+
+<label for="femail">ईमेल / संपर्क</label>
+<input type="email" id="femail" name="femail" required>
+
+<label for="service">सेवा / विभाग</label>
+<select id="service" name="service" required>
+<option value="">-- निवडा --</option>
+<option value="certificate">प्रमाणपत्रे</option>
+<option value="grievance">तक्रार निवारण</option>
+<option value="general">सर्वसामान्य</option>
+</select>
+
+<label for="feedback">अभिप्राय / सूचना</label>
+<textarea id="feedback" name="feedback" rows="5" required></textarea>
+<button type="submit" class="submit-btn">सबमिट करा</button>
+</form> 
+
+</section>
+
+<section>
+
+<h3>🤝 भागीदार / NGO / CSR / शासकीय विभाग</h3>
+<div class="partner-list">
+<div class="partner-card">NGO 1</div>
+<div class="partner-card">NGO 2</div>
+<div class="partner-card">CSR दाता 1</div>
+<div class="partner-card">शासकीय विभाग 1</div>
+<div class="partner-card">शासकीय विभाग 2</div>
+</div>
+
+</section>
+
+<section>
+
+<h3>🙋‍♂️ स्वयंसेवक बना</h3>
+<form id="volunteerForm">
+<label for="vname">नाव</label>
+<input type="text" id="vname" name="vname" required>
+
+<label for="vemail">ईमेल / संपर्क</label>
+<input type="email" id="vemail" name="vemail" required>
+
+<label for="varea">स्वयंसेवा क्षेत्र</label>
+<select id="varea" name="varea" required>
+<option value="">-- निवडा --</option>
+<option value="education">शिक्षण</option>
+<option value="environment">पर्यावरण</option>
+<option value="health">आरोग्य</option>
+<option value="other">इतर</option>
+</select>
+<button type="submit" class="submit-btn">सबमिट करा</button>
+</form>
+</section>
+
+<script>
+// PDF Modal
+const pdfCards = document.querySelectorAll('.certificate-card');
+const pdfModal = document.getElementById('pdfModal');
+const modalBody = document.getElementById('modalBody');
+
+pdfCards.forEach(card => {
+card.querySelector('button').addEventListener('click', ()=>{
+const pdf = card.dataset.pdf;
+modalBody.innerHTML = `<iframe src="${pdf}"></iframe><a href="${pdf}" download class="download-link">📥 डाउनलोड करा</a>`;
+pdfModal.style.display = 'flex';
+});
+});
+
+function closePdfModal(){ pdfModal.style.display='none'; }
+pdfModal.addEventListener('click', e => { if(e.target===pdfModal) closePdfModal(); });
+document.addEventListener('keydown', e => { if(e.key==="Escape") closePdfModal(); });
+
+// QR Modal
+const qrImg = document.getElementById('taxQR');
+const qrModal = document.getElementById('qrModal');
+function closeQrModal(){ qrModal.style.display='none'; }
+qrImg.addEventListener('click', ()=>{ qrModal.style.display='flex'; qrModal.style.justifyContent='center'; qrModal.style.alignItems='center'; });
+
+// Feedback form
+document.getElementById('feedbackForm').addEventListener('submit', function(e){
+e.preventDefault(); alert('आपला अभिप्राय यशस्वीरीत्या पाठवला गेला आहे. धन्यवाद!'); this.reset();
+});
+
+// Volunteer form
+document.getElementById('volunteerForm').addEventListener('submit', function(e){
+e.preventDefault(); alert('आपला स्वयंसेवक फॉर्म यशस्वीरीत्या पाठवला गेला आहे. धन्यवाद!'); this.reset();
+});
+</script>
+
+<script src="assets/js/script1.js"></script>
+
+<footer style="text-align:center; padding:15px; margin-top:20px;">
+© 2025 ग्रामपंचायत चोपडज | Developed by NovaTech Data Solutions LLP
+</footer>
+
+</body>
+</html>

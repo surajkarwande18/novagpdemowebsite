@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अर्थसंकल्प आणि पारदर्शकता | ग्रामपंचायत</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<style>
+body {
+  font-family: "Noto Sans Devanagari", sans-serif;
+  background: linear-gradient(135deg, #eafaf1, #ffffff);
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  width: 90%;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+  color: #007b3a;
+  border-left: 6px solid #00a850;
+  padding-left: 15px;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: linear-gradient(145deg, #ecfff2, #ffffff);
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,128,58,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,128,58,0.25);
+}
+
+.card h3 {
+  color: #008a40;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.chart-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  background: #f8fffb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+canvas {
+  max-width: 650px;
+  margin: 0 auto;
+  display: block;
+}
+
+.highlight {
+  background: #e7f9ef;
+  border-left: 5px solid #00a850;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin: 25px 0;
+}
+
+.download-btn {
+  background: #00a850;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: 0.3s;
+}
+.download-btn:hover { background: #007b3a; transform: scale(1.05); }
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #666;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+<section class="section" id="financeSection">
+  <h2>💰 अर्थसंकल्प आणि पारदर्शकता</h2>
+  
+  <div class="summary">
+    <div class="card"><h3>वार्षिक अर्थसंकल्प</h3><p>₹ ३५,००,०००</p></div>
+    <div class="card"><h3>उत्पन्नाचे स्रोत</h3><p>कर, अनुदान, देणग्या</p></div>
+    <div class="card"><h3>खर्चाचे विभाग</h3><p>स्वच्छता, पाणीपुरवठा, रस्ते, शिक्षण</p></div>
+  </div>
+
+  <div class="highlight">
+    <h3>“आपला रुपया कुठे जातो”</h3>
+    <p>खालील इन्फोग्राफिकद्वारे ग्रामनिधीचा वापर स्पष्टपणे दाखविला आहे.</p>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="budgetChart"></canvas>
+  </div>
+
+  <div class="chart-container">
+    <h3>📅 महिना-निहाय खर्च ट्रेंड</h3>
+    <canvas id="monthlyExpenses"></canvas>
+  </div>
+
+  <div class="chart-container">
+    <h3>📈 उत्पन्न विरुद्ध खर्च तुलना</h3>
+    <canvas id="incomeVsExpense"></canvas>
+  </div>
+
+  <button class="download-btn" onclick="generatePDF()">📄 वार्षिक अहवाल डाउनलोड करा</button>
+
+  <div class="highlight">
+    <h3>इतर वित्तीय माहिती:</h3>
+    <ul>
+      <li>वार्षिक आर्थिक अहवाल व ऑडिट रिपोर्ट (Auto Generated PDF).</li>
+      <li>ग्रामनिधीचे व्यवहार ऑनलाइन पाहता येण्याची सुविधा.</li>
+      <li>दरमहा खर्च व निधी प्राप्ती यांचे ग्राफिकल विश्लेषण.</li>
+      <li>नवीन योजना व खर्चासाठी जनतेचा सहभाग (Participatory Budgeting).</li>
+      <li>ग्रामपंचायतीचे बँक खाते तपशील व निधी वापर नोंदी.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  © 2025 NovaTech Data Solutions LLP — Powered Dashboard
+</footer>
+
+<script>
+/* Pie Chart */
+new Chart(document.getElementById('budgetChart'), {
+  type: 'pie',
+  data: {
+    labels: ['स्वच्छता', 'पाणीपुरवठा', 'रस्ते', 'शिक्षण', 'इतर विकासकार्य'],
+    datasets: [{
+      data: [25, 20, 30, 15, 10],
+      backgroundColor: ['#00a850', '#4cd964', '#f9d423', '#ff9f43', '#ff6b6b']
+    }]
+  },
+  options: { plugins: { title: { display: true, text: 'ग्रामनिधीचा वापर - पाई चार्ट', font: { size: 18 } } } }
+});
+
+/* Bar Chart */
+new Chart(document.getElementById('monthlyExpenses'), {
+  type: 'bar',
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    datasets: [{
+      label: 'खर्च (₹ मध्ये)',
+      data: [25000,32000,28000,35000,30000,37000,34000,39000,41000,36000,40000,45000],
+      backgroundColor: '#00a850'
+    }]
+  },
+  options: { scales: { y: { beginAtZero: true } } }
+});
+
+/* Line Chart */
+new Chart(document.getElementById('incomeVsExpense'), {
+  type: 'line',
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    datasets: [
+      { label: 'उत्पन्न', data: [40000,42000,41000,45000,48000,47000,49000,51000,53000,52000,54000,55000], borderColor: '#007bff', fill: false, tension: 0.3 },
+      { label: 'खर्च', data: [25000,32000,28000,35000,30000,37000,34000,39000,41000,36000,40000,45000], borderColor: '#00a850', fill: false, tension: 0.3 }
+    ]
+  },
+  options: { plugins: { title: { display: true, text: 'उत्पन्न विरुद्ध खर्च (₹ मध्ये)' } } }
+});
+
+/* ✅ PDF Auto Generate with Charts */
+async function generatePDF() {
+  const section = document.getElementById("financeSection");
+  const canvas = await html2canvas(section, { scale: 2 });
+  const imgData = canvas.toDataURL("image/png");
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF('p', 'mm', 'a4');
+
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const imgHeight = (canvas.height * pdfWidth) / canvas.width;
+  pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, imgHeight);
+
+  pdf.text("Prepared by: NovaTech Data Solutions LLP", 20, imgHeight + 20);
+  pdf.save("ग्रामपंचायत_अर्थसंकल्प_अहवाल.pdf");
+  alert("📄 अहवाल डाउनलोड झाला!");
+}
+</script>
+</body>
+</html>

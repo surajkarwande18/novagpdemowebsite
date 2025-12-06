@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>गॅलरी आणि मीडिया | ग्रामपंचायत</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+body {
+    font-family: "Noto Sans Devanagari", sans-serif;
+    background:#f4f9f6;
+    margin:0;
+    padding:0;
+}
+header.animated-bg {
+    background: linear-gradient(90deg, #FF9933, #FFFFFF, #138808);
+    color:black;
+    text-align:center;
+    padding:20px;
+}
+header h1 { margin:0; font-size:1.7rem; font-weight:600; }
+
+nav.main-nav {
+    display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:10px;
+}
+nav.main-nav a, nav.main-nav .dropdown button {
+    color:black; text-decoration:none; padding:8px 12px; border:none; background:none; cursor:pointer; font-weight:bold; border-radius:5px;
+}
+nav.main-nav a:hover, nav.main-nav .dropdown button:hover { background: rgba(0,0,0,0.1); }
+nav.main-nav a.active { border-bottom:2px solid black; }
+
+.menu-btn { display:none; position:absolute; top:20px; right:20px; font-size:2rem; cursor:pointer; user-select:none; z-index:1001; }
+
+.section-container { width:90%; max-width:1200px; margin:20px auto; display:flex; flex-wrap:wrap; gap:20px; }
+.card {
+    background:#fff; border-radius:10px; padding:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    flex:1 1 280px; text-align:center;
+    transition:0.3s;
+}
+.card img, .card video { width:100%; border-radius:10px; }
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+.card h3 { color:#007b3a; margin-top:10px; }
+
+.slider-container {
+    width:100%; max-width:800px; margin:20px auto; position:relative; overflow:hidden; border-radius:12px;
+}
+.slider-container img {
+    width:100%; display:none; border-radius:12px;
+}
+.slider-container img.active { display:block; }
+
+footer { text-align:center; padding:15px; margin-top:20px; color:#555; background:#e6f2ea; }
+
+@media(max-width:900px){
+    .section-container { flex-direction:column; align-items:center; }
+    .menu-btn { display:block; color:black; }
+    nav.main-nav { display:none; flex-direction:column; width:100%; background:#fff; position:absolute; top:70px; left:0; padding:10px 0; box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+    nav.main-nav.show { display:flex; }
+    .dropdown-content { display:none; flex-direction:column; position:relative; box-shadow:none; }
+    .dropdown.active .dropdown-content { display:flex; }
+}
+</style>
+</head>
+<body>
+
+<header class="animated-bg">
+<h1>🖼️ गॅलरी आणि मीडिया</h1>
+
+<div class="menu-btn" id="menu-btn">
+    <span class="hamburger">☰</span>
+    <span class="close">✖</span>
+</div>
+
+<nav class="main-nav" id="main-nav">
+    <a href="index.html">🏠 मुख्यपृष्ठ</a>
+    <div class="dropdown">
+        <button>🏛️ पंचायत</button>
+        <div class="dropdown-content">
+            <a href="about.html">ग्रामपंचायतीबद्दल</a>
+            <a href="infrastructure.html">पायाभूत सुविधा</a>
+            <a href="culture.html">संस्कृती व ओळख</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button>📜 योजना</button>
+        <div class="dropdown-content">
+            <a href="schemes.html">योजना व लाभ</a>
+            <a href="announcements.html">परिपत्रके</a>
+            <a href="services.html">नागरिक सेवा</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button>🚧 विकास</button>
+        <div class="dropdown-content">
+            <a href="projects.html">मुख्य प्रकल्प</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="employment.html">रोजगार</a>
+            <a href="education.html">शिक्षण</a>
+        </div>
+    </div>
+    <a href="gallery.html" class="active">🖼️ गॅलरी</a>
+    <a href="grievance.html">📮 तक्रार</a>
+    <a href="contact.html">📞 संपर्क</a>
+    <a href="dashboard.html">📊 डॅशबोर्ड</a>
+</nav>
+</header>
+
+<!-- फोटो गॅलरी -->
+<section>
+    <h2 style="text-align:center; color:#007b3a;">📷 फोटो गॅलरी</h2>
+    <div class="section-container">
+        <div class="card"><img src="assets/images/festival1.jpg" alt="सण १"><h3>सण १</h3></div>
+        <div class="card"><img src="assets/images/festival2.jpg" alt="सण २"><h3>सण २</h3></div>
+        <div class="card"><img src="assets/images/project1.jpg" alt="विकास कामे १"><h3>विकास कामे १</h3></div>
+        <div class="card"><img src="assets/images/project2.jpg" alt="विकास कामे २"><h3>विकास कामे २</h3></div>
+    </div>
+</section>
+
+<!-- व्हिडिओ गॅलरी -->
+<section>
+    <h2 style="text-align:center; color:#007b3a;">🎥 व्हिडिओ गॅलरी</h2>
+    <div class="section-container">
+        <div class="card">
+            <video controls>
+                <source src="assets/videos/event1.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+            <h3>कार्यक्रम १</h3>
+        </div>
+        <div class="card">
+            <video controls>
+                <source src="assets/videos/event2.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+            <h3>कार्यक्रम २</h3>
+        </div>
+    </div>
+</section>
+
+<!-- पत्रकार परिषद / मीडिया कव्हरेज -->
+<section>
+    <h2 style="text-align:center; color:#007b3a;">📰 पत्रकार परिषद / मीडिया कव्हरेज</h2>
+    <div class="section-container">
+        <div class="card"><img src="assets/images/media1.jpg" alt="मीडिया १"><h3>पत्रकार परिषद १</h3></div>
+        <div class="card"><img src="assets/images/media2.jpg" alt="मीडिया २"><h3>मीडिया कव्हरेज २</h3></div>
+    </div>
+</section>
+
+<!-- “तेव्हा आणि आता” फोटो स्लायडर -->
+<section>
+    <h2 style="text-align:center; color:#007b3a;">🕰️ “तेव्हा आणि आता” फोटो स्लायडर</h2>
+    <div class="slider-container">
+        <img src="assets/images/then1.jpg" class="active" alt="तेव्हा १">
+        <img src="assets/images/now1.jpg" alt="आता १">
+        <img src="assets/images/then2.jpg" alt="तेव्हा २">
+        <img src="assets/images/now2.jpg" alt="आता २">
+    </div>
+</section>
+
+<!-- मिनी डॉक्युमेंटरीज -->
+<section>
+    <h2 style="text-align:center; color:#007b3a;">🎬 मिनी डॉक्युमेंटरीज</h2>
+    <div class="section-container">
+        <div class="card">
+            <video controls>
+                <source src="assets/videos/doc1.mp4" type="video/mp4">
+            </video>
+            <h3>गावातील बदल १</h3>
+        </div>
+        <div class="card">
+            <video controls>
+                <source src="assets/videos/doc2.mp4" type="video/mp4">
+            </video>
+            <h3>गावातील बदल २</h3>
+        </div>
+    </div>
+</section>
+
+<footer>
+© 2025 ग्रामपंचायत चोपडज | Developed by NovaTech Data Solutions LLP
+</footer>
+
+<script>
+// Hamburger toggle
+const menuBtn = document.getElementById('menu-btn');
+const mainNav = document.getElementById('main-nav');
+menuBtn.addEventListener('click', () => {
+  mainNav.classList.toggle('show');
+});
+
+// Mobile dropdown toggle
+document.querySelectorAll('nav.main-nav .dropdown button').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const parent = btn.parentElement;
+    parent.classList.toggle('active');
+  });
+});
+
+// Simple slider functionality
+const sliderImages = document.querySelectorAll('.slider-container img');
+let currentSlide = 0;
+setInterval(() => {
+    sliderImages[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % sliderImages.length;
+    sliderImages[currentSlide].classList.add('active');
+}, 3000);
+</script>
+
+</body>
+</html>

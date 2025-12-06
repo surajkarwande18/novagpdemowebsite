@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>गावाची ओळख व संस्कृती | ग्रामपंचायत चोपडज</title>
+<link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Swiper (slider) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Lightbox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"/>
+
+
+  <style>
+    :root{
+      --bg:#f5f9f1;
+      --card:#ffffff;
+      --accent:#0A5C2A;
+      --text:#1f2933;
+      --muted:#6b7280;
+    }
+    [data-theme="dark"]{
+      --bg:#0f1720;
+      --card:#0b1220;
+      --accent:#5eead4;
+      --text:#e6eef1;
+      --muted:#9ca3af;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Noto Sans Devanagari", "Noto Sans", system-ui, -apple-system, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:linear-gradient(90deg,var(--card), rgba(255,255,255,0.6));
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px 18px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+    }
+    .brand{font-weight:700;color:var(--accent);font-size:1.05rem}
+    .controls{display:flex;gap:10px;align-items:center}
+
+    .page-wrap{max-width:1200px;margin:18px auto;padding:12px}
+
+    /* ===== Parallax Hero ===== */
+    .hero{
+      height:340px;
+      position:relative;
+      border-radius:12px;
+      overflow:hidden;
+      margin-bottom:18px;
+    }
+    .hero .parallax{
+      position:absolute;
+      inset:0;
+      background-image:url('assets/images/village1.jpg'); /* replace file */
+      background-size:cover;
+      background-position:center;
+      transform:translateZ(0);
+      will-change:transform;
+      transition:transform .2s linear;
+    }
+    .hero .overlay{
+      position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,92,42,0.35), rgba(0,0,0,0.15));
+      display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff;padding:18px;
+      text-align:center;
+    }
+    .hero h1{font-size:2rem;margin:0}
+    .hero p{margin-top:8px;opacity:0.95}
+
+    /* ===== Section base ===== */
+    .section{margin:30px 0}
+    .section h2{font-size:1.6rem;color:var(--accent);text-align:center;margin-bottom:12px}
+
+    /* ===== Card grid ===== */
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+
+    .card{
+      background:var(--card);
+      border-radius:10px;padding:16px;
+      box-shadow:0 6px 18px rgba(2,6,23,0.06);
+    }
+    .card h3{margin:6px 0;font-size:1.05rem}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    /* ===== Swiper slider ===== */
+    .swiper{width:100%;height:360px;border-radius:12px;overflow:hidden}
+    .swiper-slide img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* ===== Timeline ===== */
+    .timeline{
+      display:flex;flex-direction:column;gap:12px;align-items:stretch;margin-top:12px;
+    }
+    .timeline .event{
+      display:flex;gap:12px;align-items:flex-start;
+    }
+    .timeline .dot{
+      width:14px;height:14px;border-radius:50%;background:var(--accent);margin-top:6px;flex:0 0 18px;
+    }
+    .timeline .body{background:var(--card);padding:10px;border-radius:8px;box-shadow:0 6px 12px rgba(0,0,0,0.04)}
+
+    /* ===== Map ===== */
+    .map-wrap{border-radius:10px;overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,.08)}
+    .map-iframe{width:100%;min-height:300px;border:0;display:block}
+
+    /* ===== 360 viewer ===== */
+    #panorama {width:100%;height:420px;border-radius:10px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+
+    /* ===== Video gallery (advanced) ===== */
+    .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .video-thumb{
+      position:relative;overflow:hidden;border-radius:10px;cursor:pointer;background:#000;
+    }
+    .video-thumb img{width:100%;height:200px;object-fit:cover;display:block;opacity:0.95}
+    .video-thumb .label{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,0.6);color:#fff;padding:6px 10px;border-radius:8px;font-weight:600}
+
+    /* modal */
+    .modal{
+      position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);z-index:2000;
+    }
+    .modal.show{display:flex}
+    .modal .inner{width:90%;max-width:900px;background:var(--card);border-radius:10px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+    .close-btn{background:transparent;border:none;font-size:22px;cursor:pointer;float:right;color:var(--muted)}
+
+    /* ===== Dark/Light toggle ===== */
+    .theme-toggle{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;background:var(--card)
+    }
+
+    /* Responsive tweaks */
+    @media(max-width:640px){
+      .hero{height:240px}
+      .swiper{height:260px}
+      .video-thumb img{height:150px}
+    }
+
+/* Honour Section */
+.honour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.honour-card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+  transition: 0.3s;
+}
+
+.honour-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(2,6,23,0.15);
+}
+
+.h-img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 12px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.h-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.honour-card h3 {
+  margin: 8px 0 4px;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.honour-card .muted {
+  font-size: 0.95rem;
+}
+
+/* === FIX: Virtual Gallery Equal Size === */
+.virtual-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.virtual-gallery-item {
+  width: 100%;
+  height: 220px;       /* Equal block height */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ddd;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.virtual-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* Perfect crop fix */
+}
+
+.virtual-gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+}
+
+
+
+
+  </style>
+</head>
+ 
+<!-- 🔰 HEADER -->
+    <header class="animated-bg">
+<!-- TOP TITLE CENTER -->
+    <h1 style="
+        text-align:center;
+        margin:0;
+       padding: 3px 0 !important;
+        font-size:1.7rem;
+        font-weight:600;
+    ">
+
+🌿 ग्रामपंचायत — आमची ओळख
+
+</h1>
+
+    <!-- MOBILE MENU BUTTON -->
+   <div class="menu-btn" id="menu-btn">
+    <span class="hamburger">☰</span>
+    <span class="close">✖</span>
+  </div>
+
+
+    <!-- NAVBAR CENTERED -->
+    <nav class="main-nav" id="main-nav" style="
+        justify-content:center;
+        align-items:right;
+        flex-wrap:wrap;
+        margin-top:10px;
+        gap:10px;
+    ">
+        <a href="index.html">🏠 मुख्यपृष्ठ</a>
+
+        <div class="dropdown">
+            <button>🏛️ पंचायत</button>
+            <div class="dropdown-content">
+                <a href="about.html">ग्रामपंचायतीबद्दल</a>
+                <a href="infrastructure.html">पायाभूत सुविधा</a>
+                <a href="culture.html">संस्कृती व ओळख</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>📜 योजना</button>
+            <div class="dropdown-content">
+                <a href="schemes.html">योजना व लाभ</a>
+                <a href="announcements.html">परिपत्रके</a>
+                <a href="services.html">नागरिक सेवा</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>🚧 विकास</button>
+            <div class="dropdown-content">
+                <a href="projects.html">मुख्य प्रकल्प</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="employment.html">रोजगार</a>
+                <a href="education.html">शिक्षण</a>
+            </div>
+        </div>
+
+        <a href="gallery.html">🖼️ गॅलरी</a>
+        <a href="grievance.html">📮 तक्रार</a>
+        <a href="contact.html">📞 संपर्क</a>
+        <!-- डॅशबोर्ड + अर्थसंकल्प -->
+    <div class="dropdown">
+        <button>📊 डॅशबोर्ड</button>
+        <div class="dropdown-content">
+            <a href="dashboard.html">मुख्य डॅशबोर्ड</a>
+            <a href="finance.html">अर्थसंकल्प आणि पारदर्शकता</a>
+        </div>
+    </div>
+
+    </nav>
+
+</header>
+
+
+<body>
+
+  <main class="page-wrap">
+
+    <!-- HERO with parallax -->
+    <section class="hero" aria-label="Hero">
+      <div class="parallax" id="parallax" style="background-image:url('assets/images/hero-village.jpg');"></div>
+      <div class="overlay">
+        <h1 data-aos="fade-down">🌟 आमचे गाव — ओळख आणि संस्कृती</h1>
+        <p data-aos="fade-up" data-aos-delay="120">परंपरा, मानवी कथा आणि निसर्ग यांचा संगम — गावाचे जीवन आणि वारसा येथे जतन केले आहेत.</p>
+      </div>
+    </section>
+
+    <!-- SLIDER -->
+    <section class="section" id="slider" data-aos="fade-up">
+      <h2>🖼️ गावाची विशेष दृश्ये</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/images/village1.jpg" alt="village 1"></div>
+          <div class="swiper-slide"><img src="assets/images/mandir1.jpg" alt="mandir"></div>
+          <div class="swiper-slide"><img src="assets/images/village2.jpeg" alt="village 2"></div>
+          <div class="swiper-slide"><img src="assets/images/village-gate - Copy.jpg" alt="gate"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section" id="timeline" data-aos="fade-up">
+      <h2>📜 गावाचा इतिहास – Timeline</h2>
+      <div class="timeline">
+        <div class="event" data-year="1850">
+          <div class="dot"></div>
+          <div class="body card">
+            <strong>1850 — गाव स्थापनेच्या पूर्वकालीन नोंदी</strong>
+            <div class="muted">प्राचीन विहीर व स्थलांतराच्या नोंदी.</div>
+          </div>
+        </div>
+
+        <div class="event" data-year="1942">
+          <div class="dot"></div>
+          <div class="body card">
+            <strong>1942 — स्वातंत्र्य चळवळ</strong>
+            <div class="muted">स्थानिक स्वातंत्र्यलढ्यात गावाच्या तरुणांचा सहभाग.</div>
+          </div>
+        </div>
+
+        <div class="event" data-year="1975">
+          <div class="dot"></div>
+          <div class="body card">
+            <strong>1975 — ग्रामपंचायत स्थापना</strong>
+            <div class="muted">आधुनिक ग्रामविकासाची सुरुवात.</div>
+          </div>
+        </div>
+
+        <div class="event" data-year="2000">
+          <div class="dot"></div>
+          <div class="body card">
+            <strong>2000 — सौरऊर्जा व पाणी संवर्धन</strong>
+            <div class="muted">आरडब्ल्यूएच व सौरऊर्जा प्रकल्प सुरू.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Culture & Traditions -->
+    <section class="section" data-aos="fade-up">
+      <h2>🎭 लोककला, संगीत आणि परंपरा</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>भारुड व कीर्तन</h3>
+          <p class="muted">वार्षिक उत्सवांमध्ये गावातील कलाकार भारुड गायन करतात — पारंपारिक कथा सांगण्यात येतात.</p>
+        </div>
+        <div class="card">
+          <h3>ढोल-ताशा पथक</h3>
+          <p class="muted">सण आणि सोहळे अधिक उत्साहाने साजरे होतात.</p>
+        </div>
+        <div class="card">
+          <h3>स्थानीय हस्तकला</h3>
+          <p class="muted">बांबूची नक्षीकामे, मातीच्या भांडी व पारंपारिक कपडे.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Honoured people -->
+    <section class="section" data-aos="fade-up">
+  <h2>🌟 गौरवशाली व्यक्ती</h2>
+
+  <div class="honour-grid">
+    
+    <div class="honour-card">
+      <div class="h-img">
+        <img src="assets/images/person1.jpg" alt="">
+      </div>
+      <h3>श्री. गणेशराव देशमुख</h3>
+      <p class="muted">स्वातंत्र्यसैनिक — गावातील प्रेरणादायी व्यक्तिमत्व.</p>
+    </div>
+
+    <div class="honour-card">
+      <div class="h-img">
+        <img src="assets/images/person2.jpg" alt="">
+      </div>
+      <h3>श्रीमती वैशाली काळे</h3>
+      <p class="muted">लोककला शिक्षक व कलाकार — सांस्कृतिक उपक्रमांचे नेतृत्व.</p>
+    </div>
+
+    <div class="honour-card">
+      <div class="h-img">
+        <img src="assets/images/person3.jpg" alt="">
+      </div>
+      <h3>श्री. सुनील पाटील</h3>
+      <p class="muted">शिक्षक व समाजसेवक — शैक्षणिक प्रगतीसाठी विशेष कार्य.</p>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Village Map -->
+    <section class="section" id="map" data-aos="fade-up">
+      <h2>🗺️ गावाचा नकाशा</h2>
+      <div class="map-wrap card">
+        <!-- Replace the src with your village's Google Maps embed URL -->
+        <iframe class="map-iframe" src="https://www.google.com/maps?q=Chikhali%20India&output=embed"></iframe>
+      </div>
+    </section>
+
+    <!-- 360 TOUR -->
+    <section class="section" id="tour" data-aos="fade-up">
+      <h2>🧭 360° व्हर्च्युअल टूर</h2>
+      <div id="panorama" class="card"></div>
+      <p class="muted" style="margin-top:8px">नोट: 360° इमेज `assets/images/panorama.PNG` म्हणून ठेवा (equirectangular panorama).</p>
+    </section>
+
+    <!-- Advanced Video Gallery -->
+    <section class="section" data-aos="fade-up">
+      <h2>🎬 गावाचा आवाज — व्हिडिओ गॅलरी</h2>
+      <div class="video-grid">
+        <div class="video-thumb" data-video="assets/videos/gp_video1.mp4" tabindex="0">
+          <img src="assets/images/video-thumb1.jpg" alt="">
+          <div class="label">वृद्ध व्यक्ती अनुभव</div>
+        </div>
+        <div class="video-thumb" data-video="assets/videos/tree1.mp4" tabindex="0">
+          <img src="assets/images/video-thumb2.jpg" alt="">
+          <div class="label">वृक्षारोपण</div>
+        </div>
+        <div class="video-thumb" data-video="assets/videos/cleanliness.mp4" tabindex="0">
+          <img src="assets/images/video-thumb3.jpg" alt="">
+          <div class="label">स्वच्छता रॅली</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Virtual Gallery Lightbox Trigger (hidden images already there) -->
+<section class="section" data-aos="fade-up">
+  <h2>🖼️ व्हर्च्युअल गॅलरी</h2>
+
+  <div class="virtual-gallery-grid">
+
+    <a href="assets/images/village1.jpg" data-lightbox="vg" class="virtual-gallery-item">
+      <img src="assets/images/village1.jpg" alt="">
+    </a>
+
+    <a href="assets/images/mandir1.jpg" data-lightbox="vg" class="virtual-gallery-item">
+      <img src="assets/images/mandir1.jpg" alt="">
+    </a>
+
+    <a href="assets/images/village2.jpeg" data-lightbox="vg" class="virtual-gallery-item">
+      <img src="assets/images/village2.jpeg" alt="">
+    </a>
+
+  </div>
+</section>
+
+
+  </main>
+
+  <!-- Video modal -->
+  <div id="videoModal" class="modal" aria-hidden="true" role="dialog" aria-label="Video player">
+    <div class="inner">
+      <button id="modalClose" class="close-btn" aria-label="Close">✖</button>
+      <video id="modalVideo" controls style="width:100%;border-radius:8px" src=""></video>
+    </div>
+  </div>
+
+  <!-- JS libs -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+ 
+
+  <script>
+    // ========== AOS ==========
+    AOS.init({offset:80, duration:700, once:true});
+
+    // ========== Swiper ==========
+    const swiper = new Swiper('.swiper', {
+      loop:true,
+      autoplay:{delay:3000},
+      pagination:{el:'.swiper-pagination', clickable:true},
+      effect:'slide'
+    });
+
+    // ========== Parallax effect (simple) ==========
+    const parallax = document.getElementById('parallax');
+    window.addEventListener('scroll', () => {
+      const sc = window.scrollY;
+      // move background slower
+      parallax.style.transform = `translateY(${sc * 0.15}px) scale(1.02)`;
+    });
+
+    // ========== Timeline: small highlight as you scroll ==========
+    const events = document.querySelectorAll('.timeline .event');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.querySelector('.body').style.transform = 'translateY(0)';
+      });
+    }, {threshold:0.2});
+    events.forEach(ev => {
+      ev.querySelector('.body').style.transform = 'translateY(8px)';
+      obs.observe(ev);
+    });
+
+    // ========== Video modal (advanced video gallery) ==========
+    const thumbs = document.querySelectorAll('.video-thumb');
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalClose = document.getElementById('modalClose');
+
+    thumbs.forEach(t => {
+      t.addEventListener('click', () => {
+        const src = t.getAttribute('data-video');
+        modalVideo.src = src;
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden','false');
+        modalVideo.play();
+      });
+      t.addEventListener('keypress', (e)=>{ if(e.key==='Enter') t.click(); });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); });
+
+    function closeModal(){
+      modalVideo.pause();
+      modalVideo.src = '';
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden','true');
+    }
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/panolens@0.12.0/build/panolens.min.js"></script>
+
+<script>
+  const pano = new PANOLENS.ImagePanorama('assets/images/panorama.PNG');
+
+  const viewer = new PANOLENS.Viewer({
+    container: document.getElementById('panorama'),
+    autoRotate: true,
+    autoRotateSpeed: 0.4,
+    controlBar: true,
+    cameraFov: 80,
+  });
+
+  viewer.add(pano);
+</script>
+
+
+<!-- External Script (Correct way) -->
+    <script src="assets/js/script1.js"></script>
+
+<!-- 🧾 Footer -->
+<footer class="fade-in">
+  © 2025 ग्रामपंचायत चोपडज | Developed by <strong>Novatech Data Solutions LLP</strong>
+</footer>
+
+
+</body>
+
+
+</html>

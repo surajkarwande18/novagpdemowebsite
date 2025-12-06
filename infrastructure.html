@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ग्राम पायाभूत सुविधा | ग्रामपंचायत</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    header nav { margin-top: 15px; }
+    header nav a { color: #fff; margin: 0 12px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+    header nav a:hover { text-decoration: underline; }
+    header nav a.active { border-bottom: 2px solid #fff; padding-bottom: 3px; }
+    .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; padding: 20px; }
+    .infra-card { background: #fff; border-left: 6px solid #007b3a; padding: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; }
+    .infra-card:hover { transform: translateY(-4px); border-left-color: #00a94f; }
+    .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; padding: 20px; }
+    .card { background: #fff; border-radius: 10px; padding: 15px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.07); }
+    .card h3 { color: #007b3a; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+<header class="animated-bg">
+    
+    <!-- TOP TITLE CENTER -->
+    <h1 style="
+        text-align:center;
+        margin:0;
+       padding: 3px 0 !important;
+        font-size:1.7rem;
+        font-weight:600;
+    ">
+        🏗️ ग्राम पायाभूत सुविधा
+    </h1>
+
+    <div class="menu-btn" id="menu-btn">
+    <span class="hamburger">☰</span>
+    <span class="close">✖</span>
+  </div>
+
+    <!-- NAVBAR CENTERED -->
+    <nav class="main-nav" id="main-nav" style="
+      
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        margin-top:10px;
+        gap:10px;
+    ">
+        <a href="index.html">🏠 मुख्यपृष्ठ</a>
+
+        <div class="dropdown">
+            <button>🏛️ पंचायत</button>
+            <div class="dropdown-content">
+                <a href="about.html">ग्रामपंचायतीबद्दल</a>
+                <a href="infrastructure.html">पायाभूत सुविधा</a>
+                <a href="culture.html">संस्कृती व ओळख</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>📜 योजना</button>
+            <div class="dropdown-content">
+                <a href="schemes.html">योजना व लाभ</a>
+                <a href="announcements.html">परिपत्रके</a>
+                <a href="services.html">नागरिक सेवा</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button>🚧 विकास</button>
+            <div class="dropdown-content">
+                <a href="projects.html">मुख्य प्रकल्प</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="employment.html">रोजगार</a>
+                <a href="education.html">शिक्षण</a>
+            </div>
+        </div>
+
+        <a href="gallery.html">🖼️ गॅलरी</a>
+        <a href="grievance.html">📮 तक्रार</a>
+        <a href="contact.html">📞 संपर्क</a>
+        <a href="dashboard.html">📊 डॅशबोर्ड</a>
+    </nav>
+
+</header>
+
+
+<style>
+body {
+  background: #f3f9f4;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  width: 90%;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+  color: #007b3a !important;
+  border-left: 8px solid #00a850;
+  padding-left: 15px;
+  font-size: 1.4rem !important; /* 👈 forcefully कमी केलं */
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+
+
+.infra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+
+.infra-card {
+  background: linear-gradient(145deg, #eaffef, #ffffff);
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,128,58,0.1);
+  transition: 0.4s;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+/* Animated number */
+.counter {
+  font-size: 2rem;
+  color: #008a40;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Icon bubble */
+.infra-card::before {
+  content: attr(data-icon);
+  font-size: 2.8rem;
+  color: white;
+  background: #00a850;
+  width: 70px; height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -25px; left: calc(50% - 35px);
+  box-shadow: 0 4px 10px rgba(0,128,58,0.3);
+}
+
+/* Text styling */
+.infra-card h3 {
+  color: #007b3a;
+  margin-top: 55px;
+  margin-bottom: 10px;
+}
+
+.infra-card p {
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Hover animation */
+.infra-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0,128,58,0.2);
+}
+
+/* Fade up animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.infra-card.show {
+  animation: fadeUp 0.8s ease forwards;
+}
+</style>
+</head>
+<body>
+
+<section class="section infra-grid">
+  <h2>💧 पाणीपुरवठा व स्वच्छता</h2>
+
+  <div class="infra-card" data-icon="🚰">
+    <h3>ग्राम जल योजना</h3>
+    <p><span class="counter">250</span> घरांना पाणी जोडणी, <b>2</b> नवीन बोअरवेल्स कार्यान्वित.</p>
+  </div>
+
+  <div class="infra-card" data-icon="💧">
+    <h3>सांडपाणी व्यवस्थापन</h3>
+    <p><b>20%</b> क्षेत्रात पाइपलाइन टाकलेली, शिल्लक भागासाठी मंजूरी प्रक्रिया सुरू.</p>
+  </div>
+
+  <div class="infra-card" data-icon="🚽">
+    <h3>स्वच्छ भारत अभियान</h3>
+    <p><b>98%</b> घरांना शौचालय सुविधा, <b>स्वच्छता स्कोर 4.7/5</b>.</p>
+  </div>
+</section>
+
+<section class="section infra-grid">
+  <h2>🛣️ रस्ते, दिवे व वाहतूक</h2>
+
+  <div class="infra-card" data-icon="🛣️">
+    <h3>ग्राम रस्ता योजना</h3>
+    <p><span class="counter">12</span> कि.मी. सिमेंट रस्ते पूर्ण, <b>3</b> नवीन रस्ते प्रस्तावित.</p>
+  </div>
+
+  <div class="infra-card" data-icon="💡">
+    <h3>सौर स्ट्रीटलाइट</h3>
+    <p><span class="counter">150</span> एलईडी दिवे कार्यान्वित, <b>20</b> नवीन दिवे बसविण्याचे नियोजन.</p>
+  </div>
+
+  <div class="infra-card" data-icon="🚌">
+    <h3>बसथांबे</h3>
+    <p><b>3</b> नवीन बसथांबे – शाळा, बाजार व ग्रामकेंद्र.</p>
+  </div>
+</section>
+
+<section class="section infra-grid">
+  <h2>🏫 शिक्षण, आरोग्य आणि सुविधा</h2>
+
+  <div class="infra-card" data-icon="🏫">
+    <h3>शाळा दुरुस्ती योजना</h3>
+    <p><b>3</b> वर्ग खोल्या रंगरंगोटी व फर्निचर दुरुस्ती पूर्ण.</p>
+  </div>
+
+  <div class="infra-card" data-icon="🏥">
+    <h3>आरोग्य केंद्र</h3>
+    <p>नवीन औषध वाटप केंद्र सुरू (24x7), प्राथमिक आरोग्य सुविधा वाढल्या.</p>
+  </div>
+
+  <div class="infra-card" data-icon="📚">
+    <h3>वाचनालय व मैदान</h3>
+    <p>नवीन युवक वाचनालय, <b>खुला व्यायाम मैदान</b> सुरू.</p>
+  </div>
+</section>
+
+<style>
+body {
+  background: #f3f9f4;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section Container */
+.section {
+  width: 90%;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+}
+
+/* Section Heading */
+.section h2 {
+  color: #007b3a;
+  border-left: 8px solid #00a850;
+  padding-left: 15px;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Card Grid */
+.infra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Card Style */
+.infra-card {
+  background: linear-gradient(145deg, #eaffef, #ffffff);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,128,58,0.12);
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+/* Icon bubble */
+.infra-card::before {
+  content: attr(data-icon);
+  font-size: 3.2rem;
+  color: white;
+  background: linear-gradient(135deg, #00a850, #00994d);
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 6px 15px rgba(0,128,58,0.25);
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Card Text */
+.infra-card h3 {
+  color: #007b3a;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.infra-card p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Hover Effects */
+.infra-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,128,58,0.25);
+}
+.infra-card:hover::before {
+  transform: translateX(-50%) scale(1.1);
+}
+
+/* Fade-in Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.infra-card.show {
+  animation: fadeUp 0.8s ease forwards;
+}
+</style>
+
+<script>
+// Fade-up animation on scroll
+const cards = document.querySelectorAll('.infra-card');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('show');
+  });
+});
+cards.forEach(card => observer.observe(card));
+</script>
+
+
+<section class="section">
+  <h2>🗺️ ग्राम पायाभूत नकाशा – चोपडज, बारामती</h2>
+  <div id="villageMap" style="height:500px; border-radius:15px; overflow:hidden;"></div>
+</section>
+
+<!-- Leaflet JS + CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+// ✅ Map initialize (Chopdaj, Baramati)
+var map = L.map('villageMap').setView([18.1258, 74.5803], 14);
+
+// ✅ Satellite tiles (Esri)
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  maxZoom: 19,
+  attribution: '© Esri, Maxar, Earthstar Geographics'
+}).addTo(map);
+
+// ✅ Example markers
+L.marker([18.1258, 74.5803]).addTo(map)
+  .bindPopup("<b>चोपडज ग्रामपंचायत कार्यालय</b><br>मुख्य प्रशासकीय इमारत").openPopup();
+
+L.marker([18.1225, 74.5850]).addTo(map)
+  .bindPopup("<b>शाळा</b><br>प्राथमिक व माध्यमिक शाळा").openPopup();
+
+L.marker([18.1280, 74.5750]).addTo(map)
+  .bindPopup("<b>पाणी टाकी</b><br>ग्राम जल योजना केंद्र").openPopup();
+</script>
+
+<!-- 📊 स्मार्ट व्हिलेज डॅशबोर्ड -->
+<section class="section">
+  <h2>📊 स्मार्ट व्हिलेज रिअल-टाइम डॅशबोर्ड</h2>
+
+  <!-- Overview Cards -->
+  <div class="dashboard-grid">
+    <div class="card power"><h3>⚡ वीजपुरवठा</h3><p id="power">23 तास</p></div>
+    <div class="card water"><h3>💧 पाण्याची उपलब्धता</h3><p id="water">92%</p></div>
+    <div class="card clean"><h3>🧹 स्वच्छता स्कोर</h3><p id="clean">4.7 / 5</p></div>
+    <div class="card health"><h3>🏥 आरोग्य मोहिम</h3><p id="health">लसीकरण मोहिम सुरू</p></div>
+    <div class="card edu"><h3>📚 शैक्षणिक हजेरी</h3><p id="edu">94%</p></div>
+    <div class="card waste"><h3>🚛 कचरा संकलन</h3><p id="waste">1.2 टन / दिवस</p></div>
+  </div>
+
+  <!-- Charts -->
+  <div class="charts-grid">
+    <div class="chart-card"><h3>⚡ वीजपुरवठा ट्रेंड</h3><canvas id="powerChart"></canvas></div>
+    <div class="chart-card"><h3>💧 पाण्याचा वापर</h3><canvas id="waterChart"></canvas></div>
+    <div class="chart-card"><h3>🧹 स्वच्छता स्कोर</h3><canvas id="cleanChart"></canvas></div>
+    <div class="chart-card"><h3>🏥 आरोग्य मोहिम सहभाग</h3><canvas id="healthChart"></canvas></div>
+    <div class="chart-card"><h3>🚛 कचरा संकलन (टन)</h3><canvas id="wasteChart"></canvas></div>
+    <div class="chart-card"><h3>📚 शैक्षणिक हजेरी</h3><canvas id="eduChart"></canvas></div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// 🗓️ Labels
+const days = ["सोम", "मंगळ", "बुध", "गुरु", "शुक्र", "शनि", "रवि"];
+
+// 📊 Dummy Starting Data
+let liveData = {
+  power: [22, 23, 21, 24, 23, 22, 23],
+  water: [88, 90, 92, 91, 93, 95, 92],
+  clean: [4.1, 4.3, 4.4, 4.6, 4.7, 4.8, 4.9],
+  health: [60, 65, 70, 80, 85, 90, 95],
+  waste: [1.0, 1.1, 1.3, 1.2, 1.4, 1.3, 1.2],
+  edu: [91, 92, 93, 94, 94, 95, 94]
+};
+
+// 📈 Chart Creation Function
+function createChart(id, label, color, type="line") {
+  return new Chart(document.getElementById(id), {
+    type,
+    data: {
+      labels: days,
+      datasets: [{
+        label,
+        data: liveData[id.replace("Chart","")],
+        borderColor: color,
+        backgroundColor: color + "66",
+        fill: type !== "bar",
+        tension: 0.4
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true } }
+    }
+  });
+}
+
+// 🎨 Create all charts
+const charts = {
+  powerChart: createChart("powerChart", "तास", "#f39c12"),
+  waterChart: createChart("waterChart", "टक्केवारी", "#3498db", "bar"),
+  cleanChart: createChart("cleanChart", "रेटिंग", "#2ecc71"),
+  healthChart: createChart("healthChart", "सहभाग (%)", "#e74c3c", "bar"),
+  wasteChart: createChart("wasteChart", "टन", "#16a085", "bar"),
+  eduChart: createChart("eduChart", "हजेरी (%)", "#9b59b6")
+};
+
+// 🔄 Live Simulation — Update every 5 sec
+setInterval(() => {
+  // Random Update Values
+  const rand = (min, max) => (Math.random() * (max - min) + min);
+
+  // Update cards (simulate real-time)
+  document.getElementById("power").textContent = `${Math.round(rand(21, 24))} तास`;
+  document.getElementById("water").textContent = `${Math.round(rand(85, 98))}%`;
+  document.getElementById("clean").textContent = `${rand(4.0, 5.0).toFixed(1)} / 5`;
+  document.getElementById("edu").textContent = `${Math.round(rand(90, 98))}%`;
+  document.getElementById("waste").textContent = `${rand(1.0, 1.5).toFixed(1)} टन / दिवस`;
+
+  // Update chart datasets
+  Object.keys(charts).forEach(key => {
+    const chart = charts[key];
+    const newValue = rand( chart.data.datasets[0].data[0]*0.9, chart.data.datasets[0].data[0]*1.1 );
+    chart.data.datasets[0].data.push(Number(newValue.toFixed(2)));
+    chart.data.datasets[0].data.shift();
+    chart.update();
+  });
+}, 5000);
+</script>
+
+<style>
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.card:hover { transform: scale(1.05); }
+.card h3 { margin-bottom: 8px; color: #333; }
+
+.power { border-top: 5px solid #f39c12; }
+.water { border-top: 5px solid #3498db; }
+.clean { border-top: 5px solid #2ecc71; }
+.health { border-top: 5px solid #e74c3c; }
+.edu { border-top: 5px solid #9b59b6; }
+.waste { border-top: 5px solid #16a085; }
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+.chart-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 15px;
+}
+.chart-card h3 {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #007b3a;
+}
+</style>
+
+ <!-- External Script (Correct way) -->
+    <script src="assets/js/script1.js"></script>
+<footer>
+  <p>© 2025 ग्रामपंचायत | Developed by NovaTech Data Solutions LLP</p>
+</footer>
+</body>
+</html>

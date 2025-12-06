@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>फीडबॅक फॉर्म | ग्रामपंचायत</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+body { font-family:"Noto Sans Devanagari", sans-serif; background:#f4f9f6; margin:0; padding:0; }
+
+</style>
+</head>
+<body>
+
+        
+<header class="animated-bg">
+<h1>💬 नागरिक फीडबॅक फॉर्म</h1>
+
+ <div class="menu-btn" id="menu-btn">
+    <span class="hamburger">☰</span>
+    <span class="close">✖</span>
+  </div>
+
+
+<nav class="main-nav">
+    <a href="index.html">🏠 मुख्यपृष्ठ</a>
+
+    <div class="dropdown">
+        <button>🏛️ पंचायत</button>
+        <div class="dropdown-content">
+            <a href="about.html">ग्रामपंचायतीबद्दल</a>
+            <a href="infrastructure.html">पायाभूत सुविधा</a>
+            <a href="culture.html">संस्कृती व ओळख</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button>📜 योजना</button>
+        <div class="dropdown-content">
+            <a href="schemes.html">योजना व लाभ</a>
+            <a href="announcements.html">परिपत्रके</a>
+            <a href="services.html" class="active">नागरिक सेवा</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button>🚧 विकास</button>
+        <div class="dropdown-content">
+            <a href="projects.html">मुख्य प्रकल्प</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="employment.html">रोजगार</a>
+            <a href="education.html">शिक्षण</a>
+        </div>
+    </div>
+
+    <a href="gallery.html">🖼️ गॅलरी</a>
+    <a href="grievance.html" class="active">📮 तक्रार</a>
+    <a href="contact.html">📞 संपर्क</a>
+     <!-- डॅशबोर्ड + अर्थसंकल्प -->
+    <div class="dropdown">
+        <button>📊 डॅशबोर्ड</button>
+        <div class="dropdown-content">
+            <a href="dashboard.html">मुख्य डॅशबोर्ड</a>
+            <a href="finance.html">अर्थसंकल्प आणि पारदर्शकता</a>
+        </div>
+    </div>
+
+</nav>
+</header>
+
+
+<style>
+/* Hamburger button styling */
+.menu-btn {
+  display:none;
+  position:absolute;
+  top:20px;
+  right:20px;
+  font-size:2rem;
+  cursor:pointer;
+  user-select:none;
+  z-index:1001;
+}
+
+/* Mobile responsive */
+@media(max-width:900px){
+  nav.main-nav {
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    width:100%;
+    background:#fff;
+    position:absolute;
+    top:70px;
+    left:0;
+    padding:10px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  }
+  nav.main-nav.show { display:flex; }
+  .menu-btn { display:block; color:black; }
+  .dropdown-content { position:relative; box-shadow:none; }
+}
+</style>
+
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const mainNav = document.querySelector('nav.main-nav');
+
+menuBtn.addEventListener('click', () => {
+  mainNav.classList.toggle('show');
+});
+</script>
+
+
+
+<!-- Feedback Form Section -->
+<section class="feedback-section">
+  
+  <!-- Form iframe -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf-nyznhDR6uONjKJSAXnPPkyhWrFYDdk3eKazLNZqctb-kPQ/viewform?usp=preview" 
+          class="form-embed"></iframe>
+
+  <!-- QR code and text -->
+  <div class="qr-box">
+    <p style="color:Black; text-align:center;">किंवा QR code scan करून फीडबॅक द्या</p>
+    <img src="assets/images/feedback_qr.png" alt="Feedback QR Code" class="qr-code">
+  </div>
+
+</section>
+
+<style>
+.feedback-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    gap: 30px;
+    flex-wrap: wrap; /* Mobile वर stacked होण्यासाठी */
+}
+
+.form-embed {
+    flex: 1 1 600px;
+    height: 650px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.qr-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 200px; /* QR box width */
+}
+
+.qr-code {
+    width: 150px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .feedback-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-embed, .qr-box {
+        flex: unset;
+        width: 100%;
+    }
+
+    .qr-box {
+        margin-top: 20px;
+    }
+}
+</style>
+
+<script src="assets/js/script1.js"></script>
+
+<footer>
+© 2025 ग्रामपंचायत चोपडज | Developed by NovaTech Data Solutions LLP
+</footer>
+
+</body>
+</html>

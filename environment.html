@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>पर्यावरण आणि शाश्वत विकास | ग्रामपंचायत</title>
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+<style>
+*{
+  margin:0; padding:0; box-sizing:border-box;
+  font-family:'Noto Sans Devanagari', sans-serif;
+}
+body{
+  background:#F5F9F1;
+  color:#222;
+}
+
+/* Header Banner */
+header h1 { margin:0; font-size:1.7rem; font-weight:600; }
+
+nav.main-nav {
+    display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:10px;
+}
+nav.main-nav a, nav.main-nav .dropdown button {
+    color:black; text-decoration:none; padding:8px 12px; border:none; background:none; cursor:pointer; font-weight:bold; border-radius:5px;
+}
+nav.main-nav a:hover, nav.main-nav .dropdown button:hover { background: rgba(0,0,0,0.1); }
+nav.main-nav a.active { border-bottom:2px solid black; }
+
+.menu-btn { display:none; position:absolute; top:20px; right:20px; font-size:2rem; cursor:pointer; user-select:none; z-index:1001; }
+
+/* Sections */
+.section{
+  padding:50px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+.section h2{
+  font-size:28px;
+  font-weight:700;
+  color:#0a5c29;
+  margin-bottom:20px;
+}
+
+/* Cards grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 6px 14px rgba(0,0,0,0.2);
+}
+.card img{
+  width:60px;
+  margin-bottom:15px;
+}
+
+/* Scoreboard */
+.score-box{
+  display:flex;
+  justify-content:space-around;
+  background:#E7F6E3;
+  padding:25px;
+  border-radius:12px;
+}
+.score{
+  text-align:center;
+}
+.score h3{
+  font-size:26px;
+  color:#0a5c29;
+}
+.score p{
+  font-size:15px;
+}
+
+/* Progress Bar */
+.progress-container{
+  background:#d7ecd3;
+  border-radius:20px;
+  height:22px;
+  margin-top:10px;
+}
+.progress-bar{
+  height:100%;
+  width:65%;
+  background:#2ecc71;
+  border-radius:20px;
+}
+
+/* Adopt a tree */
+.adopt-box{
+  background:#E3F7FF;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+}
+.adopt-btn{
+  background:#0077cc;
+  color:#fff;
+  padding:10px 20px;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  font-size:16px;
+  margin-top:10px;
+}
+.adopt-btn:hover{
+  background:#005fa3;
+}
+
+@media(max-width:900px){
+    .section-container { flex-direction:column; align-items:center; }
+    .menu-btn { display:block; color:black; }
+    nav.main-nav { display:none; flex-direction:column; width:100%; background:#fff; position:absolute; top:70px; left:0; padding:10px 0; box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+    nav.main-nav.show { display:flex; }
+    .dropdown-content { display:none; flex-direction:column; position:relative; box-shadow:none; }
+    .dropdown.active .dropdown-content { display:flex; }
+}
+
+/* Weather Box */
+.weather{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  margin-top:20px;
+}
+.weather h3{
+  color:#0a5c29;
+}
+
+/* Video section */
+.video-box{
+  width:100%;
+  margin:auto;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 14px rgba(0,0,0,0.15);
+}
+.video-box video{
+  width:100%;
+  border-radius:12px;
+}
+
+.video-grid video{
+  width:100%;
+  border-radius:10px;
+}
+
+.video-card{
+  background:#fff;
+  padding:10px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.video-card p{
+  margin-top:8px;
+  color:#0a5c29;
+  font-weight:600;
+  text-align:center;
+}
+
+/* Photo grid */
+.photo-grid{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:15px;
+}
+.photo-grid img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  transition:.3s;
+}
+.photo-grid img:hover{
+  transform:scale(1.05);
+}
+
+/* ------------------ NEW AGRICULTURE SECTION ---------------- */
+
+.agri-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:20px;
+}
+
+.agri-card{
+  padding:22px;
+  background:linear-gradient(135deg,#e3ffe7,#d9fdd3);
+  border-radius:14px;
+  box-shadow:0 5px 12px rgba(0,0,0,0.1);
+  transition:.3s;
+}
+.agri-card:hover{
+  transform:scale(1.03);
+}
+
+.market{
+  font-size:18px;
+  line-height:28px;
+}
+
+.weather-box{
+  padding:20px;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 5px 12px rgba(0,0,0,0.12);
+}
+.temperature{
+  font-size:28px;
+  font-weight:700;
+  color:#00733b;
+}
+
+.story-slider{
+  background:#fff;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 5px 12px rgba(0,0,0,0.12);
+}
+.story{
+  animation:fadeStory 6s infinite;
+}
+@keyframes fadeStory{
+  0%{opacity:0;}
+  10%{opacity:1;}
+  90%{opacity:1;}
+  100%{opacity:0;}
+}
+
+.weather {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #e3f6ff, #ffffff);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.weather h3 {
+  margin-bottom: 10px;
+  color: #0077b6;
+}
+
+.weather p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.active-parent {
+    color: #0a5c29 !important;
+    font-weight: 700;
+    border-bottom: 3px solid #0a5c29;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="animated-bg">
+<h1>पर्यावरण आणि शाश्वत विकास</h1>
+  <p>हरित गाव, स्वच्छ गाव – शाश्वत विकासाच्या दिशेने पाऊल</p>
+
+<div class="menu-btn" id="menu-btn">
+    <span class="hamburger">☰</span>
+    <span class="close">✖</span>
+</div>
+
+<nav class="main-nav" id="main-nav">
+    <a href="index.html">🏠 मुख्यपृष्ठ</a>
+    <div class="dropdown">
+        <button>🏛️ पंचायत</button>
+        <div class="dropdown-content">
+            <a href="about.html">ग्रामपंचायतीबद्दल</a>
+            <a href="infrastructure.html">पायाभूत सुविधा</a>
+            <a href="culture.html">संस्कृती व ओळख</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button>📜 योजना</button>
+        <div class="dropdown-content">
+            <a href="schemes.html">योजना व लाभ</a>
+            <a href="announcements.html">परिपत्रके</a>
+            <a href="services.html">नागरिक सेवा</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="active-parent">🚧 विकास </button>
+        <div class="dropdown-content">
+            <a href="projects.html">मुख्य प्रकल्प</a>
+            <a href="environment.html" class="active">पर्यावरण</a>
+            <a href="employment.html">रोजगार</a>
+            <a href="education.html">शिक्षण</a>
+        </div>
+    </div>
+    <a href="gallery.html" >🖼️ गॅलरी</a>
+    <a href="grievance.html">📮 तक्रार</a>
+    <a href="contact.html">📞 संपर्क</a>
+    <!-- डॅशबोर्ड + अर्थसंकल्प -->
+    <div class="dropdown">
+        <button>📊 डॅशबोर्ड</button>
+        <div class="dropdown-content">
+            <a href="dashboard.html">मुख्य डॅशबोर्ड</a>
+            <a href="finance.html">अर्थसंकल्प आणि पारदर्शकता</a>
+        </div>
+    </div>
+
+</nav>
+</header>
+
+<!-- TREE PLANTATION -->
+<section class="section" data-aos="fade-up">
+  <h2>🌱 वृक्षारोपण मोहिमा</h2>
+  
+  <div class="score-box">
+    <div class="score">
+      <h3 id="trees-planted">12,450</h3>
+      <p>लावलेली झाडे</p>
+    </div>
+    <div class="score">
+      <h3 id="target-trees">20,000</h3>
+      <p>लक्ष्य</p>
+    </div>
+    <div class="score">
+      <h3>🌳</h3>
+      <p>ग्रीन स्कोअरबोर्ड</p>
+    </div>
+  </div>
+
+  <p style="margin-top:20px;">सध्याची प्रगती</p>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+</section>
+
+<!-- CAMPAIGNS GRID -->
+<section class="section" data-aos="fade-up">
+  <h2>♻ अभियान व उपक्रम</h2>
+  
+  <div class="grid">
+    <div class="card"><img src="assets/images/tree.png"><h3>वृक्षारोपण</h3><p>गावात प्रत्येक वर्षी भव्य वृक्षारोपण मोहिमा चालवल्या जातात.</p></div>
+    <div class="card"><img src="assets/images/no-plastic.png"><h3>प्लास्टिक-मुक्त अभियान</h3><p>100% प्लास्टिक वापर कमी करण्यासाठी जनजागृती मोहीम.</p></div>
+    <div class="card"><img src="assets/images/recycle.png"><h3>कचरा वर्गीकरण योजना</h3><p>ओला आणि सुका कचरा वेगळा करण्यासाठी घराघरात बिन्स.</p></div>
+    <div class="card"><img src="assets/images/rainwater.png"><h3>पावसाचे पाणी साठवण</h3><p>शाळा, ग्रामपंचायत व घरे येथे RWH पद्धतीची अंमलबजावणी.</p></div>
+    <div class="card"><img src="assets/images/solar.png"><h3>सौर ऊर्जा योजना</h3><p>ग्रामपंचायत ऑफिस 70% सौरऊर्जेवर चालते.</p></div>
+    <div class="card"><img src="assets/images/water.png"><h3>पाणी संवर्धन</h3><p>बोरवेल तपासणी, पाणी गळती नियंत्रण व पाणी बचत मोहीम.</p></div>
+  </div>
+</section>
+
+<!-- VIDEO & PHOTOS -->
+<section class="section" data-aos="fade-up">
+  <h2>🎥 पर्यावरण डॉक्युमेंटरी व फोटो गॅलरी</h2>
+
+  <div class="video-box">
+      <video controls poster="assets/images/tree-cover.jpg">
+      <source src="assets/videos/environment-doc.mp4" type="video/mp4">
+      </video>
+  </div>
+
+  <div class="grid video-grid" style="margin-top:25px;">
+    <div class="video-card"><video controls><source src="assets/videos/tree1.mp4"></video><p>विद्यालय वृक्षारोपण</p></div>
+    <div class="video-card"><video controls><source src="assets/videos/cleanliness.mp4"></video><p>स्वच्छता रॅली</p></div>
+    <div class="video-card"><video controls><source src="assets/videos/water-saving.mp4"></video><p>पाणी बचत मोहीम</p></div>
+  </div>
+
+  <h3 style="margin-top:40px; color:#0a5c29;">📸 फोटो गॅलरी</h3>
+  <div class="photo-grid">
+    <img src="assets/images/treeplant1.jpg">
+    <img src="assets/images/treeplant2.jpg">
+    <img src="assets/images/clean1.jpg">
+    <img src="assets/images/solar1.jpg">
+    <img src="assets/images/water1.jpg">
+    <img src="assets/images/plantation-camp.jpg">
+  </div>
+</section>
+
+<!-- ADOPT -->
+<section class="section" data-aos="fade-up">
+  <h2>🌳 Adopt a Tree (झाड दत्तक घ्या)</h2>
+
+  <div class="adopt-box">
+    <h3>एक झाड दत्तक घ्या आणि त्याच्या वाढीचे निरीक्षण करा!</h3>
+    <button class="adopt-btn" onclick="alert('आपले झाड नोंदवले गेले!')">झाड दत्तक घ्या</button>
+  </div>
+</section>
+
+
+
+<!-- 🌾 NEW AGRICULTURE SECTION -->
+<section class="section" data-aos="fade-up">
+  <h2>🌾 कृषी आणि उपजीविका</h2>
+
+  <div class="agri-box">
+
+    <!-- Crop Advice -->
+    <div class="agri-card">
+      <h3>🌿 पीक सल्ला</h3>
+      <p id="cropText">सध्याचा सल्ला लोड होत आहे...</p>
+    </div>
+
+    <!-- Success Stories slider -->
+    <div class="story-slider">
+      <h3>🏆 यशोगाथा</h3>
+      <p id="storyBox" class="story"></p>
+    </div>
+
+    <!-- Market Prices -->
+    <div class="agri-card">
+      <h3>💹 बाजारभाव</h3>
+      <p class="market" id="marketBox"></p>
+    </div>
+
+  </div>
+
+  <!-- Weather -->
+ <div class="weather">
+    <h3>🌦 हवामान अद्यतने (Live)</h3>
+    <p id="temp">तापमान लोड होत आहे...</p>
+    <p id="rain">पावसाची शक्यता लोड होत आहे...</p>
+    <p id="condition"></p>
+  </div>
+</section>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+  offset: 80,
+  duration: 800,
+  once: true
+});
+</script>
+
+<script>
+AOS.init({
+  startEvent: 'DOMContentLoaded',
+  once: false,
+  mirror: false,
+  offset: 50,
+});
+
+// Page refresh scroll fix
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 50);
+});
+</script>
+
+
+
+<!-- Dynamic Agriculture JS -->
+<script>
+/* Crop Suggestions */
+const crops = [
+  "सोयाबीनसाठी कमी पाणी देणाऱ्या सिंचनाची शिफारस.",
+  "बाजरीसाठी सेंद्रिय खतांचा वापर करा.",
+  "तुरीमध्ये कीड नियंत्रणासाठी फेरोमोन ट्रॅप लावा.",
+  "कापूस पिकासाठी ठिबक सिंचन सर्वोत्तम."
+];
+/* Auto-Rotate Crop Suggestions */
+let cropIndex = 0;
+function updateCropAdvice() {
+  document.getElementById("cropText").innerText = crops[cropIndex];
+  cropIndex = (cropIndex + 1) % crops.length;
+}
+updateCropAdvice();
+setInterval(updateCropAdvice, 6000);
+
+
+/* Success Stories Slider */
+const stories = [
+  "श्री. पाटील यांनी ठिबक सिंचन वापरून 30% पाणी बचत केली.",
+  "सेंद्रिय शेतीमुळे शेतकरी मिसाळ यांचे उत्पादन 22% वाढले.",
+  "बाजरी पिकात सुधारित बियाणे वापरून गावात 18 क्विंटल सरासरी उत्पादन."
+];
+let i=0;
+setInterval(()=>{
+  document.getElementById("storyBox").innerText = stories[i];
+  i = (i+1) % stories.length;
+}, 6000);
+
+/* Market Rates */
+document.getElementById("marketBox").innerHTML = `
+  सोयाबीन: <b>₹4,850</b><br>
+  बाजरी: <b>₹3,200</b><br>
+  तूर: <b>₹7,000</b>
+`;
+</script>
+
+<script>
+  const API_KEY = "ae9f8a466794b22d01c062976c094418";  // इथे तुझा OpenWeatherMap Key ठेव
+  const village = "Chikhali,IN";            // गावाचे नाव बदलू शकतोस
+
+  async function loadWeather() {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${village}&appid=${API_KEY}&units=metric&lang=mr`
+    );
+    const data = await response.json();
+
+    document.getElementById("temp").innerHTML =
+      "आजचे तापमान: " + data.main.temp + "°C";
+
+    document.getElementById("rain").innerHTML =
+      "पावसाची शक्यता: " + (data.clouds.all || 0) + "%";
+
+    document.getElementById("condition").innerHTML =
+      "स्थिती: " + data.weather[0].description;
+  }
+
+  loadWeather();
+  loadMarketRates();
+</script>
+
+<script>
+// Hamburger toggle
+const menuBtn = document.getElementById('menu-btn');
+const mainNav = document.getElementById('main-nav');
+menuBtn.addEventListener('click', () => {
+  mainNav.classList.toggle('show');
+});
+
+// Mobile dropdown toggle
+document.querySelectorAll('nav.main-nav .dropdown button').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const parent = btn.parentElement;
+    parent.classList.toggle('active');
+  });
+});
+</script>
+
+</body>
+</html>
