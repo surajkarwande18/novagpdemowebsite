@@ -75,12 +75,15 @@
     </nav>
 </header>
 <!-- 🔹 Stylish Service Sections -->
+<!-- 🔹 Stylish Service Sections -->
 <section class="service-section">
 
 <!-- प्रमाणपत्रे Section -->
 <section>
   <h2 style="text-align:center; color:#007b3a;">📄 प्रमाणपत्रे</h2>
+
   <div class="certificate-row">
+
     <!-- जन्म प्रमाणपत्र -->
     <div class="certificate-card" data-pdf="assets/forms/birth_certificate.pdf">
       <h3>जन्म प्रमाणपत्र</h3>
@@ -101,6 +104,83 @@
       <p>RTS प्रमाणपत्र पाहण्यासाठी क्लिक करा.</p>
       <button class="view-btn">📄 पाहा</button>
     </div>
+
+    <!-- विवाह नोंदणीचे प्रमाणपत्र -->
+    <div class="certificate-card" data-pdf="assets/forms/marriage_certificate.pdf">
+      <h3>विवाह नोंदणीचे प्रमाणपत्र</h3>
+      <p>विवाह नोंदणीचे प्रमाणपत्र पाहण्यासाठी क्लिक करा.</p>
+      <button class="view-btn">📄 पाहा</button>
+    </div>
+
+    <!-- थकबाकी नसल्याचे प्रमाणपत्र -->
+    <div class="certificate-card" data-pdf="assets/forms/no_dues_certificate.pdf">
+      <h3>थकबाकी नसल्याचे प्रमाणपत्र</h3>
+      <p>थकबाकी नसल्याचे प्रमाणपत्र पाहण्यासाठी क्लिक करा.</p>
+      <button class="view-btn">📄 पाहा</button>
+    </div>
+
+    <!-- निराधार असल्याचा दाखला -->
+    <div class="certificate-card" data-pdf="assets/forms/niradhar_certificate.pdf">
+      <h3>निराधार असल्याचा दाखला</h3>
+      <p>निराधार असल्याचा दाखला पाहण्यासाठी क्लिक करा.</p>
+      <button class="view-btn">📄 पाहा</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- अर्ज / Apply Section -->
+<section style="margin-top:40px;">
+  <h2 style="text-align:center; color:#007b3a;">📝 अर्ज भरणे (Apply for Certificates)</h2>
+
+  <div class="certificate-row">
+
+    <!-- जन्म प्रमाणपत्रासाठी अर्ज -->
+    <div class="certificate-card no-popup">
+      <h3>जन्म प्रमाणपत्रासाठी अर्ज</h3>
+      <p>जन्म प्रमाणपत्र मिळवण्यासाठी खालील फॉर्म भरा.</p>
+      <a href="https://forms.gle/your-google-form-link" target="_blank">
+        <button class="view-btn">📝 अर्ज भरा</button>
+      </a>
+    </div>
+
+    <!-- मृत्यू प्रमाणपत्रासाठी अर्ज -->
+    <div class="certificate-card no-popup">
+      <h3>मृत्यू प्रमाणपत्रासाठी अर्ज</h3>
+      <p>मृत्यू प्रमाणपत्र मिळवण्यासाठी खालील फॉर्म भरा.</p>
+      <a href="https://forms.gle/your-google-form-link" target="_blank">
+        <button class="view-btn">📝 अर्ज भरा</button>
+      </a>
+    </div>
+
+    <!-- विवाह नोंदणी प्रमाणपत्रासाठी अर्ज -->
+    <div class="certificate-card no-popup">
+      <h3>विवाह नोंदणी प्रमाणपत्रासाठी अर्ज</h3>
+      <p>विवाह नोंदणी प्रमाणपत्र मिळवण्यासाठी फॉर्म भरा.</p>
+      <a href="https://forms.gle/your-google-form-link" target="_blank">
+        <button class="view-btn">📝 अर्ज भरा</button>
+      </a>
+    </div>
+
+    <!-- थकबाकी नसल्याचे प्रमाणपत्रासाठी अर्ज -->
+    <div class="certificate-card no-popup">
+      <h3>थकबाकी नसल्याचे प्रमाणपत्रासाठी अर्ज</h3>
+      <p>थकबाकी नसल्याचे प्रमाणपत्र मिळवण्यासाठी फॉर्म भरा.</p>
+      <a href="https://forms.gle/your-google-form-link" target="_blank">
+        <button class="view-btn">📝 अर्ज भरा</button>
+      </a>
+    </div>
+
+    <!-- निराधार असल्याचा दाखला अर्ज -->
+    <div class="certificate-card no-popup">
+      <h3>निराधार असल्याचा दाखला अर्ज</h3>
+      <p>निराधार असल्याचा दाखला मिळवण्यासाठी अर्ज भरा.</p>
+      <a href="https://forms.gle/your-google-form-link" target="_blank">
+        <button class="view-btn">📝 अर्ज भरा</button>
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -115,12 +195,13 @@
 <style>
 /* Row styling */
 .certificate-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
 }
+
 
 /* Card styling */
 .certificate-card {
@@ -211,8 +292,13 @@
 const pdfModal = document.getElementById('pdfModal');
 const modalBody = document.getElementById('modalBody');
 document.querySelectorAll('.certificate-card').forEach(card => {
+  // If card has no-popup class, do NOT open popup
+  if (card.classList.contains("no-popup")) return;
+
   card.addEventListener('click', ()=>{
     const pdf = card.dataset.pdf;
+    if (!pdf) return; // No PDF → do nothing
+
     modalBody.innerHTML = `
       <iframe src="${pdf}"></iframe>
       <a href="${pdf}" download class="download-link">📥 डाउनलोड करा</a>
@@ -220,7 +306,6 @@ document.querySelectorAll('.certificate-card').forEach(card => {
     pdfModal.style.display = 'flex';
   });
 });
-
 // Close modal function
 function closePDFModal(){
   pdfModal.style.display = 'none';
@@ -246,6 +331,64 @@ document.addEventListener('keydown', function(e){
 
 </section>
 
+<section class="self-cert-section">
+  <h2>📄 स्वयंघोषापत्र डाउनलोड</h2>
+
+  <div class="self-cert-container">
+
+    <!-- 1) रहिवासी स्वयंघोषापत्र -->
+    <div class="self-card">
+      <h3>रहिवासी स्वयंघोषापत्र</h3>
+      <a href="assets/self-certificates/rahivasi.pdf" download class="download-btn">Download</a>
+    </div>
+
+    <!-- 2) हयात असल्याबाबत स्वयंघोषापत्र -->
+    <div class="self-card">
+      <h3>हयात असल्याबाबत स्वयंघोषापत्र</h3>
+      <a href="assets/self-certificates/hayat.pdf" download class="download-btn">Download</a>
+    </div>
+
+    <!-- 3) शौचालय असल्याबाबत स्वयंघोषापत्र -->
+    <div class="self-card">
+      <h3>शौचालय असल्याबाबत स्वयंघोषापत्र</h3>
+      <a href="assets/self-certificates/shauchalay.pdf" download class="download-btn">Download</a>
+    </div>
+
+    <!-- 4) परित्यक्ता असल्याबाबत स्वयंघोषापत्र -->
+    <div class="self-card">
+      <h3>परित्यक्ता असल्याबाबत स्वयंघोषापत्र</h3>
+      <a href="assets/self-certificates/parityakta.pdf" download class="download-btn">Download</a>
+    </div>
+
+    <!-- 5) विभक्त कुटुंबाबाबत स्वयंघोषापत्र -->
+    <div class="self-card">
+      <h3>विभक्त कुटुंबाबाबत स्वयंघोषापत्र</h3>
+      <a href="assets/self-certificates/vibhakt.pdf" download class="download-btn">Download</a>
+    </div>
+
+    <!-- 6) विजय ज्योती देणीसाठी स्वयंघोषापत्र -->
+    <div class="self-card">
+      <h3>विजय ज्योती देणीसाठी स्वयंघोषापत्र</h3>
+      <a href="assets/self-certificates/vijay_jyoti.pdf" download class="download-btn">Download</a>
+    </div>
+
+    <!-- 7) कोणत्याही योजनेचा लाभ न घेतल्याचे स्वयंघोषापत्र -->
+    <div class="self-card">
+      <h3>कोणत्याही योजनेचा लाभ न घेतल्याचे स्वयंघोषापत्र</h3>
+      <a href="assets/self-certificates/no_scheme.pdf" download class="download-btn">Download</a>
+    </div>
+
+    <!-- 8) वयाबाबत स्वयंघोषापत्र -->
+    <div class="self-card">
+      <h3>वयाबाबत स्वयंघोषापत्र</h3>
+      <a href="assets/self-certificates/age.pdf" download class="download-btn">Download</a>
+    </div>
+
+  </div>
+</section>
+
+
+
 <section>
     <!-- तक्रार निवारण पोर्टल -->
     <div class="service-card">
@@ -262,6 +405,7 @@ document.addEventListener('keydown', function(e){
     </div>
 
 </section>
+
 
 
 <!-- ऑनलाइन कर भरणा -->
