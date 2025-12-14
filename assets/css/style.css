@@ -1273,8 +1273,22 @@ marquee {
   background: #0056b3;
 }
 
+/* Dropdown button arrow */
+.dropdown > button::after,
+.dropdown-btn::after {
+  content: " ▼";
+  font-size: 12px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
 
+/* Optional: hover look */
+.dropdown > button:hover::after,
+.dropdown-btn:hover::after {
+  color: #2e7d32;
+}
 </style>
+
 
 
 
