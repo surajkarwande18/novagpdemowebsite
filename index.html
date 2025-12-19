@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ग्रामपंचायत घोटा (देवी) | मुख्यपृष्ठ</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+
+ 
+/* Body: Soft neutral gradient */
+/* Body: subtle Indian flag inspired gradient (soft cream → white → soft green) */
+/* Body: subtle Indian flag inspired gradient */
+/* Body: Dark grey background with light text */
+body {
+  margin: 0;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  background: #2c2c2c; /* Dark grey */
+  color: #f1f1f1; /* Light text for readability */
+}
+
+
+/* Header: Indian flag gradient */
+header {
+  background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  padding: 8px 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: #212121; /* Dark text on light parts */
+}
+
+/* Navbar links */
+nav .nav-link {
+  color: #212121;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+nav .nav-link:hover {
+  color: #0055a4; /* Deep blue for hover highlight */
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+}
+
+
+
+
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .logo-title img {
+      height: 55px;
+      flex-shrink: 0;
+    }
+
+    .logo-title h1 {
+      margin: 0;
+      font-size: clamp(1rem, 2.3vw, 1.3rem);
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .nav-link:hover {
+      background: #fff;
+      color: #d84315;
+    }
+
+   
+    @media (max-width: 768px) {
+      .logo-title img { height: 45px; }
+      .logo-title h1 { font-size: clamp(0.85rem, 3.8vw, 1.1rem); }
+    }
+
+    /* 🔹 ताज्या बातम्या marquee */
+    .news-section {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      margin: 10px 0;
+    }
+
+    .news-section h2 {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+      color: #ff0059;
+      animation: blinkZoom 1.8s infinite ease-in-out;
+    }
+
+    @keyframes blinkZoom {
+      0%, 100% { opacity: 1; transform: scale(1); color: #ff0059; }
+      50% { opacity: 0.6; transform: scale(1.15); color: #0066ff; }
+    }
+
+
+  </style>
+</head>
+<body>
+
+<!-- 🔰 HEADER -->
+    <header>
+        <div class="header-container">
+
+            <!-- LOGO + TITLE -->
+            <div class="logo-title">
+                <img src="assets/images/logo_gp.png" alt="ग्रामपंचायत लोगो">
+                <div class="titles">
+                    <h2>भारत सरकार</h2>
+                    <h1>ग्रामपंचायत घोटा(देवी)</h1>
+                    
+                </div>
+            </div>
+
+            <!-- MOBILE MENU BUTTON -->
+            <div class="menu-btn" id="menu-btn">☰</div>
+             
+            <!-- NAVBAR -->
+            <nav class="main-nav" id="main-nav">
+
+                <a href="index.html" class="active">🏠 मुख्यपृष्ठ</a>
+
+                <!-- पंचायत -->
+                <div class="dropdown">
+                    <button>🏛️ पंचायत</button>
+                    <div class="dropdown-content">
+                        <a href="about.html">ग्रामपंचायतीबद्दल</a>
+                        <a href="infrastructure.html">पायाभूत सुविधा</a>
+                        <a href="culture.html">संस्कृती व ओळख</a>
+                    </div>
+                </div>
+
+                <!-- योजना -->
+                <div class="dropdown">
+                    <button>📜 योजना</button>
+                    <div class="dropdown-content">
+                        <a href="schemes.html">योजना व लाभ</a>
+                        <a href="announcements.html">परिपत्रके</a>
+                        <a href="services.html">नागरिक सेवा</a>
+                    </div>
+                </div>
+
+                <!-- विकास -->
+                <div class="dropdown">
+                    <button>🚧 विकास</button>
+                    <div class="dropdown-content">
+                        <a href="projects.html">मुख्य प्रकल्प</a>
+                        <a href="environment.html">पर्यावरण</a>
+                        <a href="employment.html">रोजगार</a>
+                        <a href="education.html">शिक्षण</a>
+                    </div>
+                </div>
+
+                <!-- Direct Links (underline removed through CSS) -->
+                <a href="gallery.html">🖼️ गॅलरी</a>
+                <a href="grievance.html">📮 तक्रार</a>
+                <a href="contact.html">📞 संपर्क</a>
+                 <!-- डॅशबोर्ड + अर्थसंकल्प -->
+    <div class="dropdown">
+        <button>📊 डॅशबोर्ड</button>
+        <div class="dropdown-content">
+            <a href="dashboard.html">मुख्य डॅशबोर्ड</a>
+            <a href="finance.html">अर्थसंकल्प आणि पारदर्शकता</a>
+        </div>
+    </div>
+
+
+            </nav>
+        </div>
+    </header>
+
+<!-- 📰 ताज्या बातम्या -->
+<div class="news-section" style="position:relative;">
+  <h2>⭐ ताज्या बातम्या ⭐</h2>
+
+  <!-- 🔹 Right corner compact weather widget -->
+  <div id="weatherWidget">
+    🌤️ लोड होत आहे...
+  </div>
+
+  <marquee behavior="scroll" direction="left" scrollamount="5"
+           onmouseover="this.stop();" onmouseout="this.start();"
+           style="background:#eef6ff; padding:10px; border-radius:8px; color:#003366; font-size:1rem; margin-top:8px;">
+    
+    <span style="margin-right:35px; cursor:pointer;" onclick="openPopup(1)">
+      <span class="blink-star">⭐</span> स्वच्छता मोहीम — गावात स्वच्छतेसाठी विशेष उपक्रम
+      <span class="new-badge">🆕 New</span>
+    </span>
+
+    <span style="margin-right:35px; cursor:pointer;" onclick="openPopup(2)">
+      <span class="blink-star">⭐</span> ऍनिमिया मुक्त गावं अभियान
+      <span class="new-badge">🆕 New</span>
+    </span>
+
+    <span style="margin-right:35px; cursor:pointer;" onclick="openPopup(3)">
+      <span class="blink-star">⭐</span> पाणी साठवण प्रकल्प — नवीन विहिरीचे उद्घाटन
+    </span>
+    <span style="margin-right:35px; cursor:pointer;" onclick="openPopup(4)">
+      <span class="blink-star">⭐</span> आजच कर भरा! घरपट्टी व पाणीपट्टीवर ५०% सूट – अंतिम तारीख ३१ डिसेंबर २०२५.
+    </span>
+    <span style="margin-right:35px; cursor:pointer;" onclick="openPopup(5)">
+      <span class="blink-star">⭐</span> महिला बचतगट उपक्रम — आर्थिक स्वावलंबनाकडे वाटचाल
+      <span class="new-badge">📄 Notice</span>
+    </span>
+
+    <span onclick="openPopup(6)" style="margin-right:35px; cursor:pointer;">📢 ग्रामसभा बैठक सायं. ५ वाजता</span>
+    <span onclick="openPopup(7)" style="margin-right:35px; cursor:pointer;">💧 पाणीपुरवठा उद्या बंद राहील</span>
+    <span onclick="openPopup(8)" style="margin-right:35px; cursor:pointer;">💡 नवीन नळजोडणी योजना सुरू</span>
+    <span onclick="openPopup(9)" style="margin-right:35px; cursor:pointer;">🧹 स्वच्छता अभियान आठवडा चालू आहे</span>
+    <span onclick="openPopup(10)" style="margin-right:35px; cursor:pointer;">🌱 वृक्षारोपण कार्यक्रम रविवार दि. ९ नोव्हेंबर रोजी</span>
+  </marquee>
+</div>
+
+<!-- 🔹 Styles for compact weather widget -->
+<style>
+#weatherWidget {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: #e3f2fd;
+  color: #212121;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 500;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Responsive for mobile */
+@media(max-width:768px){
+  #weatherWidget{
+    top: 5px;
+    right: 5px;
+    font-size:0.75rem;
+    padding:4px 8px;
+  }
+}
+</style>
+
+<!-- 🔹 Compact Weather JS -->
+<script>
+const apiKey = "ae9f8a466794b22d01c062976c094418";
+const city = "Chikhali,IN";
+
+async function fetchWeatherCompact() {
+  try {
+    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=mr&appid=${apiKey}`);
+    const data = await res.json();
+
+    if(data.cod !== 200){
+      document.getElementById("weatherWidget").innerText = "🌤️ डेटा उपलब्ध नाही";
+      return;
+    }
+
+    const temp = data.main.temp.toFixed(1);
+    const desc = data.weather[0].description;
+
+    document.getElementById("weatherWidget").innerText = `🌤️ ${temp}°C, ${desc}`;
+  } catch(err){
+    document.getElementById("weatherWidget").innerText = "🌤️ Error!";
+    console.error(err);
+  }
+}
+
+// Initial fetch & refresh every 10 min
+fetchWeatherCompact();
+setInterval(fetchWeatherCompact, 10*60*1000);
+</script>
+
+
+
+<!-- 🔹 Popup -->
+<div id="popup" style="display:none; position:fixed; inset:0; background-color:rgba(0,0,0,0.6); z-index:9999;">
+  <div style="background:#fff; width:90%; max-width:650px; margin:5% auto; padding:20px; border-radius:12px; position:relative; box-shadow:0 0 15px rgba(0,0,0,0.3);">
+    <span onclick="closePopup()" style="position:absolute; top:8px; right:14px; font-size:24px; font-weight:bold; color:#444; cursor:pointer;">&times;</span>
+    <div id="popup-body" style="font-family:'Noto Sans Devanagari',sans-serif; color:#222; line-height:1.6;"></div>
+  </div>
+</div>
+
+<!-- 🔹 Styles -->
+<style>
+  @keyframes blinkStar {
+    0% { color: #ff0000; transform: scale(1); }
+    50% { color: #0055ff; transform: scale(1.15); }
+    100% { color: #ff0000; transform: scale(1); }
+  }
+  .blink-star {
+    animation: blinkStar 1s infinite;
+    margin-right: 6px;
+    font-size: 1.1rem;
+    display: inline-block;
+  }
+
+  @keyframes glowNew {
+    0% { color: #ff0000; text-shadow: 0 0 6px #ff3333, 0 0 10px #ff0000; }
+    50% { color: #0055ff; text-shadow: 0 0 6px #3399ff, 0 0 10px #0055ff; }
+    100% { color: #ff0000; text-shadow: 0 0 6px #ff3333, 0 0 10px #ff0000; }
+  }
+  .new-badge {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-left: 8px;
+    animation: glowNew 1.2s infinite;
+  }
+
+  @media (max-width: 600px) {
+    marquee { font-size: 0.9rem !important; }
+    #popup-body img { max-height: 160px !important; }
+  }
+</style>
+
+<!-- 🔹 Script -->
+<script>
+  const newsData = {
+    1: { title: 'स्वच्छता मोहीम — गावात स्वच्छतेसाठी विशेष उपक्रम', images: ['assets/images/news1.jpg'], info: 'गावात स्वच्छता मोहीम अंतर्गत कचरा संकलन, गटार स्वच्छता आणि जनजागृती कार्यक्रम राबविण्यात आला आहे.' },
+    2: { title: 'ऍनिमिया मुक्त गावं अभियान', images: ['assets/images/news2.jpeg'], info: 'गावात ऍनिमिया मुक्त गावं अभियान अंतर्गत आरोग्य तपासणी आणि जनजागृती उपक्रम राबविण्यात आले आहेत.' },
+    3: { title: 'पाणी साठवण प्रकल्प — नवीन विहिरीचे उद्घाटन', images: ['assets/images/news3.jpg'], info: 'नवीन विहिरीच्या उभारणीमुळे गावातील पाणीटंचाई कमी होईल आणि शेतीसाठी सिंचनास मदत मिळेल.' },
+ 4: { 
+  title: 'आजच कर भरा! घरपट्टी व पाणीपट्टीवर ५०% सूट – अंतिम तारीख ३१ डिसेंबर २०२५.', 
+  images: ['assets/images/Tax.jpeg'], 
+  info: `ग्रामपंचायत हद्दीतील सर्व नागरिकांना कळविण्यात येते की घरपट्टी व पाणीपट्टीवर ५०% सवलत देण्यात येत आहे.
+सदर सवलतीचा लाभ घेण्याची अंतिम तारीख ३१ डिसेंबर २०२५ आहे.
+नागरिकांनी मुदतीत कर भरून सवलतीचा लाभ घ्यावा.` 
+},
+    5: { title: 'महिला बचतगट उपक्रम — आर्थिक स्वावलंबनाकडे वाटचाल', pdf: 'assets/pdfs/suchna.pdf', info: 'महिला बचतगट उपक्रमांद्वारे गावातील महिलांना स्वयंरोजगार प्रोत्साहन.' },
+    
+    // 🔹 नवीन बातम्या (6–10)
+    6: { title: 'ग्रामसभा बैठक', info: 'ग्रामसभा बैठक आज सायं. ५ वाजता ग्रामपंचायत सभागृहात होणार आहे. सर्व नागरिकांनी उपस्थित राहावे.' },
+    7: { title: 'पाणीपुरवठा बंद', info: 'देखभालीसाठी उद्या पूर्ण दिवस पाणीपुरवठा बंद राहील. नागरिकांनी पाण्याची साठवण करावी.' },
+    8: { title: 'नवीन नळजोडणी योजना', info: 'ग्रामपंचायतीत नवीन नळजोडणी योजना सुरू करण्यात आली आहे. अर्ज ग्रामसेवक कार्यालयात उपलब्ध आहेत.' },
+    9: { title: 'स्वच्छता अभियान आठवडा', info: 'गावात स्वच्छता अभियान आठवडा साजरा केला जात आहे. सर्व नागरिकांनी सहभागी व्हावे.' },
+    10: { title: 'वृक्षारोपण कार्यक्रम', info: 'रविवार दि. ९ नोव्हेंबर रोजी सकाळी ८ वाजता शाळा परिसरात वृक्षारोपण कार्यक्रम आयोजित केला आहे.' }
+  };
+
+  function openPopup(id) {
+    const popup = document.getElementById("popup");
+    const body = document.getElementById("popup-body");
+    const item = newsData[id];
+    if (!item) return;
+
+    let html = `<h3 style="color:#0055aa; text-align:center; margin-bottom:12px;">${item.title}</h3>`;
+    
+    if (item.pdf) {
+      html += `
+        <p>${item.info}</p>
+        <iframe src="${item.pdf}" style="width:100%; height:400px; border:none; border-radius:8px;"></iframe>
+        <a href="${item.pdf}" download style="display:inline-block;margin-top:10px;background:#0055ff;color:#fff;
+                  padding:8px 14px;border-radius:8px;text-decoration:none;">
+           ⬇️ Download Notice (PDF)
+        </a>`;
+    } else if (item.images) {
+      item.images.forEach(src => {
+        html += `<img src="${src}" style="width:100%; border-radius:8px; margin-bottom:10px;">`;
+      });
+      html += `<p>${item.info}</p>`;
+    } else {
+      html += `<p>${item.info}</p>`;
+    }
+
+    body.innerHTML = html;
+    popup.style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const popup = document.getElementById("popup");
+    if (event.target === popup) closePopup();
+  };
+</script>
+
+  <!-- 🏞️ Hero Banner -->
+  <section class="hero">
+    <img src="assets/images/grampanchayat-office.jpeg" alt="ग्रामपंचायत कार्यालय">
+    <div class="hero-content">
+      <h2>आपले हार्दिक स्वागत आहे!</h2>
+<p>ग्रामपंचायत घोटा (देवी) – पारदर्शक प्रशासन, शाश्वत विकास आणि डिजिटल सुविधांकडे वाटचाल करणारे आदर्श गाव</p>
+      <a href="about.html" class="btn">अधिक जाणून घ्या</a>
+    </div>
+  </section>
+
+<!-- Panchayat Message Section -->
+<section class="panchayat-message" style="background:#fff3e0; padding:40px 10%; text-align:center; border-radius:12px; margin:20px 0;">
+  <h2 style="color:#fb8c00;">💡 आजचा सुविचार / पंचायत संदेश</h2>
+  <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();" style="font-size:1.1rem; color:#6d4c41; margin-top:15px;">
+   "डिजिटल सेवा, जलद निर्णय आणि प्रामाणिक प्रशासन हेच स्मार्ट गावाचे आधारस्तंभ आहेत."
+  </marquee>
+</section>
+
+<!-- महाराष्ट्र शासन नेतृत्व -->
+<section class="section" id="leadership">
+  <h2>🌟 महाराष्ट्र शासन नेतृत्व</h2>
+
+  <div class="leadership-row">
+
+    <!-- 1 -->
+    <div class="leader-card" data-aos="zoom-in">
+      <div class="leader-img">
+        <img src="assets/images/cm.png" alt="Chief Minister">
+      </div>
+      <h3>श्री. देवेंद्र फडणवीस</h3>
+      <p class="muted">मुख्यमंत्री, महाराष्ट्र राज्य</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="leader-card" data-aos="zoom-in" data-aos-delay="100">
+      <div class="leader-img">
+        <img src="assets/images/dycm1.png" alt="Dy CM 1">
+      </div>
+      <h3>श्री. एकनाथ शिंदे</h3>
+      <p class="muted">उपमुख्यमंत्री, महाराष्ट्र राज्य</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="leader-card" data-aos="zoom-in" data-aos-delay="200">
+      <div class="leader-img">
+        <img src="assets/images/dycm2.jpg" alt="Dy CM 2">
+      </div>
+      <h3>श्री. अजित पवार</h3>
+      <p class="muted">उपमुख्यमंत्री, महाराष्ट्र राज्य</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ग्रामविकास व पंचायतराज विभाग नेतृत्व -->
+<section class="section" id="leadership">
+  <h2>🌱 ग्रामविकास व पंचायतराज विभाग नेतृत्व</h2>
+
+  <div class="leadership-row">
+
+    <!-- 1 -->
+    <div class="leader-card" data-aos="zoom-in">
+      <div class="leader-img">
+        <img src="assets/images/rd-minister.png" alt="Gramin Vikas Mantri">
+      </div>
+      <h3>श्री. जयकुमार गोरे</h3>
+      <p class="muted">ग्रामविकास व पंचायतराज मंत्री, महाराष्ट्र राज्य</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="leader-card" data-aos="zoom-in" data-aos-delay="100">
+      <div class="leader-img">
+        <img src="assets/images/rd-rajmantri.png" alt="Gramin Vikas Rajmantri">
+      </div>
+      <h3>श्री. योगेश कदम</h3>
+      <p class="muted">ग्रामविकास व पंचायतराज राज्यमंत्री, महाराष्ट्र राज्य</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 🏡 गाव एक दृष्टिक्षेपात -->
+<section class="village-info">
+  <h2>🏡 गाव एक दृष्टिक्षेपात</h2>
+  <div class="info-cards">
+    <div class="card"><h3>लोकसंख्या</h3><p>१,४००</p></div>
+    <div class="card"><h3>घरसंख्या</h3><p>२८०</p></div>
+    <div class="card"><h3>साक्षरता दर</h3><p>७४%</p></div>
+    <div class="card"><h3>प्रभाग</h3><p>३</p></div>
+    <div class="card"><h3>पाणी योजना</h3><p>२ प्रमुख स्रोत</p></div>
+    <div class="card"><h3>शेतकरी गट</h3><p>६</p></div>
+  </div>
+</section>
+
+<!-- 📊 ग्रामविकास डॅशबोर्ड -->
+<section class="village-dashboard">
+  <h2>📊 ग्रामविकास डॅशबोर्ड</h2>
+  <div class="chart-grid">
+    <div class="chart-card">
+      <canvas id="literacyChart"></canvas>
+      <p>साक्षरता दर</p>
+    </div>
+    <div class="chart-card">
+      <canvas id="waterChart"></canvas>
+      <p>पाणी योजना</p>
+    </div>
+    <div class="chart-card">
+      <canvas id="digitalChart"></canvas>
+      <p>डिजिटल सेवांचा वापर</p>
+    </div>
+ <!-- 🏠 PMAY / घरकुल प्रगती -->
+    <div class="chart-card">
+      <canvas id="pmayChart"></canvas>
+      <p>PMAY / घरकुल प्रगती</p>
+    </div>
+
+  </div>
+  
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+/* 📘 Literacy Chart */
+new Chart(document.getElementById('literacyChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['साक्षर', 'असाक्षर'],
+    datasets: [{
+      data: [74, 26],
+      backgroundColor: ['#4caf50', '#c8e6c9'],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+
+/* 💧 Water Supply Chart */
+new Chart(document.getElementById('waterChart'), {
+  type: 'bar',
+  data: {
+    labels: ['नळ योजना', 'विहीर/बोअर'],
+    datasets: [{
+      label: 'कार्यक्षमता (%)',
+      data: [82, 70],
+      backgroundColor: ['#4caf50', '#ffb300']
+    }]
+  },
+  options: {
+    scales: { y: { beginAtZero: true, max: 100 } },
+    plugins: { legend: { display: false } }
+  }
+});
+
+/* 💻 Digital Usage */
+new Chart(document.getElementById('digitalChart'), {
+  type: 'line',
+  data: {
+    labels: ['2020', '2021', '2022', '2023', '2024'],
+    datasets: [{
+      label: 'वापर टक्केवारी',
+      data: [28, 40, 55, 65, 72],
+      fill: true,
+      borderColor: '#4caf50',
+      backgroundColor: 'rgba(76,175,80,0.2)',
+      tension: 0.3
+    }]
+  },
+  options: {
+    scales: { y: { beginAtZero: true, max: 100 } },
+    plugins: { legend: { position: 'bottom' } }
+  }
+});
+
+/* 🏠 PMAY / Housing Progress Chart */
+new Chart(document.getElementById('pmayChart'), {
+  type: 'bar',
+  data: {
+    labels: ['मंजूर', 'बांधकाम सुरू', 'पूर्ण'],
+    datasets: [{
+      label: 'घरांची संख्या',
+      data: [120, 85, 60],
+      backgroundColor: [
+        '#03a9f4',
+        '#ff9800',
+        '#4caf50'
+      ]
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    },
+    plugins: {
+      legend: { display: false }
+    }
+  }
+});
+</script>
+
+<!-- 💧 Water Storage & Trend Dashboard -->
+<section class="water-dashboard">
+  <h2>💧 पाणी साठा आणि पुरवठा ट्रेंड</h2>
+  <div class="charts-container">
+    <div class="chart-box">
+      <canvas id="storageGauge"></canvas>
+      <p>सध्याचा साठा स्तर</p>
+    </div>
+    <div class="chart-box">
+      <canvas id="monthlyTrend"></canvas>
+      <p>मासिक पाणी पुरवठा ट्रेंड</p>
+    </div>
+  </div>
+</section>
+
+<script>
+/* 💧 Storage Gauge */
+new Chart(document.getElementById('storageGauge'), {
+  type: 'doughnut',
+  data: {
+    labels: ['वापरलेला', 'उपलब्ध'],
+    datasets: [{
+      data: [58, 42],
+      backgroundColor: ['#4caf50', '#e0e0e0']
+    }]
+  },
+  options: {
+    cutout: '80%',
+    plugins: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: '💧 साठा स्तर: 58%'
+      }
+    }
+  }
+});
+
+/* 📆 Monthly Water Trend */
+new Chart(document.getElementById('monthlyTrend'), {
+  type: 'line',
+  data: {
+    labels: ['जाने', 'फेब्रु', 'मार्च', 'एप्रिल', 'मे', 'जून', 'जुलै', 'ऑग', 'सप्टें', 'ऑक्टो'],
+    datasets: [{
+      label: 'लिटर',
+      data: [18000, 20000, 23000, 25000, 27000, 29000, 31000, 29500, 27000, 26000],
+      borderColor: '#03a9f4',
+      backgroundColor: 'rgba(3,169,244,0.2)',
+      fill: true,
+      tension: 0.4
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true } }
+  }
+});
+</script>
+
+<!-- 📊 प्रगती मीटर -->
+<section class="progress-meter" style="background:f5f7fa;padding:50px 10%;border-radius:12px;text-align:center;">
+  <h2>📊 प्रगती मीटर</h2>
+
+  <div class="progress-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;">
+
+    <!-- Swachhata -->
+    <div>
+      <h3>स्वच्छता टक्केवारी</h3>
+      <canvas id="swachhProgress"></canvas>
+      <p>एकूण स्वच्छता कव्हरेज</p>
+    </div>
+
+    <!-- Nal Jodani -->
+    <div>
+      <h3>नळजोडणी कव्हरेज</h3>
+      <canvas id="waterProgress"></canvas>
+      <p>घरगुती नळजोडणी स्थिती</p>
+    </div>
+
+    <!-- Samruddha Panchayat -->
+    <div>
+      <h3>सँमृद्ध पंचायत योजना</h3>
+      <canvas id="panchayatProgress"></canvas>
+      <p>योजना अंमलबजावणी प्रगती</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* 🧼 Swachhata Progress */
+new Chart(document.getElementById('swachhProgress'), {
+  type: 'doughnut',
+  data: {
+    labels: ['पूर्ण झाले', 'बाकी'],
+    datasets: [{
+      data: [78, 22],
+      backgroundColor: ['#4caf50', '#e0e0e0']
+    }]
+  },
+  options: {
+    cutout: '70%',
+    plugins: {
+      legend: { position: 'bottom' },
+      title: {
+        display: true,
+        text: '78% पूर्ण'
+      }
+    }
+  }
+});
+
+/* 🚰 Nal Jodani Progress */
+new Chart(document.getElementById('waterProgress'), {
+  type: 'doughnut',
+  data: {
+    labels: ['जोडणी उपलब्ध', 'बाकी'],
+    datasets: [{
+      data: [70, 30],
+      backgroundColor: ['#2196f3', '#e0e0e0']
+    }]
+  },
+  options: {
+    cutout: '70%',
+    plugins: {
+      legend: { position: 'bottom' },
+      title: {
+        display: true,
+        text: '70% कव्हरेज'
+      }
+    }
+  }
+});
+
+/* 🏛 Samruddha Panchayat Progress */
+new Chart(document.getElementById('panchayatProgress'), {
+  type: 'doughnut',
+  data: {
+    labels: ['पूर्ण कामे', 'प्रगतीत'],
+    datasets: [{
+      data: [62, 38],
+      backgroundColor: ['#ff9800', '#e0e0e0']
+    }]
+  },
+  options: {
+    cutout: '70%',
+    plugins: {
+      legend: { position: 'bottom' },
+      title: {
+        display: true,
+        text: '62% प्रगती'
+      }
+    }
+  }
+});
+</script>
+
+<!-- 📹 ग्रामविकास व्हिडिओ -->
+<section class="video-section">
+  <h2>🎥 ग्रामविकास व्हिडिओ</h2>
+  <video controls>
+    <source src="assets/videos/gp_video2.mp4" type="video/mp4">
+    तुमचा ब्राउझर व्हिडिओ प्ले करू शकत नाही.
+  </video>
+</section>
+
+<script src="assets/js/script1.js"></script>
+
+
+  <!-- Footer -->
+  <footer>
+    © 2025 ग्रामपंचायत घोटा(देवी)| Developed by <strong>NovaTech Data Solutions LLP</strong>
+  </footer>
+
+</body>
+</html>
